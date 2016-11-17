@@ -1,4 +1,4 @@
-@media screen and (max-width: 1400px) {/*резиновые блоки*/
+﻿@media screen and (max-width: 1400px) {/*резиновые блоки*/
    #pagewrap {
       width: 84%;
    }
@@ -7,7 +7,7 @@
    }
 }
 
-@media screen and (max-width: 700px) {/*резиновые блоки*/
+@media screen and (max-width: 800px) {/*резиновые блоки*/
    #pagewrap {
       width: 90%;
    }
