@@ -1,0 +1,8 @@
+@media screen and (max-width: 600px) {/*резиновые блоки*/
+   li {
+  display: block; /* Отображать как строчный элемент */
+  }
+  menu {
+    margin-top: -70px;
+  }
+}

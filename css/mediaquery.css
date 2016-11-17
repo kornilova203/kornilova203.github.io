@@ -1,0 +1,24 @@
+@media screen and (max-width: 1400px) {/*резиновые блоки*/
+   #pagewrap {
+      width: 84%;
+   }
+   main {
+     width: calc(100% - 180px);
+   }
+}
+
+@media screen and (max-width: 700px) {/*резиновые блоки*/
+   #pagewrap {
+      width: 90%;
+   }
+   main {
+     position: relative;
+     width: 100%;
+     float: none;
+   }
+   nav {
+     margin-top: auto;
+     position: relative;
+     float: none;
+   }
+}

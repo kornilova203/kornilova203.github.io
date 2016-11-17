@@ -1,0 +1,71 @@
+
+body {
+  background-color: #03001c;
+  font-family: 'calibri', sans-serif;
+  font-weight : lighter;
+  color: white;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+   width: auto\9; /* ie8 */
+}
+
+#pagewrap {
+   width: 1180px;
+   margin: 0 auto;
+}
+
+main {
+  float: right;
+  background-color: #0065ff;
+  width: 1000px; /*ширина*/
+}
+
+nav {
+  font-size: 18px;
+  margin-top: 60px;
+  position: fixed;
+  float: left;
+  width: 180px;
+  background-color: #1400f1;
+}
+
+ul {
+  background-color: #ff00f1;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+li{
+  margin: 0px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a { /* анимация */
+-webkit-transition-duration: 0.5s;
+-o-transition-duration: 0.5s;
+-moz-transition-duration: 0.5s;
+transition-duration: 0.5s;
+}
+a:hover { /* цвет при наведении */
+color: #ffbc00;
+}
+
+#myName {
+
+  margin-top: 20px;
+  height: 60px;
+  clear: both;
+  float: right;
+}
+
+main, nav, ul {
+  background-color: transparent;
+}
