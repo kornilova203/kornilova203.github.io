@@ -1,49 +1,67 @@
-/*Что лучше css или закругленный div?*/
+@viewport {
+  width: device-width;
+}
+
+ @font-face {
+     font-family: CormorantGaramond;
+     src: url(../font/CormorantGaramond-Light.ttf) format("opentype");
+     font-weight: lighter;
+}
 body {
   background-color: #03001c;
   text-align: center;
   margin: 0px; /*убираем отступы от краев*/
+  background-image: url('../img/bg.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.wrap {
+  position: relative;
+  height: 60vh;
+  width: 100vw;
 }
 
 h1 {
-  position: fixed;
+  display: block;
+  margin: 0;
+  height: calc(50vh - 30vmin);
+  line-height: calc(50vh - 30vmin);
   width: 100%;
   font-size: 150%;
-  top:15%;
-  margin-top: -10px;
   color: #ffffff;
-  font-family: 'calibri', sans-serif;
-  font-weight : lighter;
 }
 
 menu {
   font-size: 150%;
   width: 100%;
   position: fixed;
-  top:85%;
-  margin-top: -40px;
-  z-index: 30;
-  padding: 0px; /*чтобы отступы слева и справа были одинаковые*/
   text-align: center;
-
-  /*background-color: #094398;*/
+  display: block;
+  margin: 0;
+  height: calc(50vh - 30vmin);
+  line-height: calc(50vh - 30vmin);
+  width: 100%;
+  padding: 0;
 }
+
 ul {
   list-style-type: none;
-  padding: 4px; /* Значение полей */
+  padding: 0;
+  margin: 0;
 }
 
 li {
   display: inline; /* Отображать как строчный элемент */
   padding: 0px 30px; /* Поля вокруг текста */
-  /*background-color: #922985;*/
 }
 
 a {
   color: #ffffff;
-  font-family: 'calibri', sans-serif;
-  font-weight : lighter;
+  font-family: CormorantGaramond, tahoma, sans-serif;
+  font-weight: lighter;
   text-decoration: none;
+  vertical-align: middle;
 }
 
 a { /* анимация */
@@ -52,118 +70,92 @@ a { /* анимация */
 -moz-transition-duration: 0.5s;
 transition-duration: 0.5s;
 }
+
 a:hover { /* цвет при наведении */
 color: #ffbc00;
 }
 
-.spaceObjects { /*общее для планет*/
-  background-size: cover; /*Картинка полностью заполняет div*/
- left: 50%; /*Выравниваем левый верхний угол по центру*/
- top: 50%;
- position: absolute;/*Не двигается*/
+.solarSistem {
+  display: inline-block; /*для позиции по центру*/
+  width: 60vmin;
+  height: 60vmin;
+  vertical-align: middle;
+  position: relative;
 }
 
-#sunCircle {
-  width: 6vmin;
-  height: 6vmin;
-  margin-left: -3vmin;
-  margin-top: -3vmin;
-  background:#ffbc00;
+.spaceObjects { /*общее для планет*/
+  background-size: cover; /*Картинка полностью заполняет div*/
+  left: 50%; /*Выравниваем левый верхний угол по центру*/
+  top: 50%;
+  position: absolute;
 }
 
 #planet1 {
-  width: 2vmin;
-  height: 2vmin;
-  margin-left: -1vmin;
-  margin-top: -6vmin;
-  background: rgb(85, 255, 154);
+  margin-left: 50%;
+  background-image: url(../img/space/planet1.png);
+  background-size: cover;
 }
 
 #planet2 {
-  width: 2.4vmin;
-  height: 2.4vmin;
-  margin-left: -9.2vmin;
-  margin-top: -1.2vmin;
-  background: rgb(224, 64, 251);
+  margin-top: 50%;
+  background-image: url(../img/space/planet2.png);
+  background-size: cover;
 }
 
 #planet3 {
-  width: 3vmin;
-  height: 3vmin;
-  margin-left: 10.5vmin;
-  margin-top: -1.5vmin;
-  background: rgb(100, 204, 9);
-}
-
-#planet4 {
-  width: 4vmin;
-  height: 4vmin;
-  margin-left: -19vmin;
-  margin-top: -2vmin;
-  background: rgb(51, 99, 255);
-}
-
-#planet5 {
-  width: 5vmin;
-  height: 5vmin;
-  margin-left: -2.5vmin;
-  margin-top: 20.5vmin;
-  background: rgb(172, 0, 44);
+  margin-top: 78%;
+  margin-left: 50%;
+  background-image: url(../img/space/planet3.png);
+  background-size: cover;
 }
 
 
 #path1 {
-  width: 10vmin;
-  height: 10vmin;
-  margin-left: calc(-5vmin - 2px);
-  margin-top: calc(-5vmin - 2px);
+  width: 50%;
+  height: 50%;
 }
 
 #path2 {
-  width: 16vmin;
-  height: 16vmin;
-  margin-left: calc(-8vmin - 2px);
-  margin-top: calc(-8vmin - 2px);
+  width: 70%;
+  height: 70%;
 }
 
 #path3 {
-  width: 24vmin;
-  height: 24vmin;
-  margin-left: calc(-12vmin - 2px);
-  margin-top: calc(-12vmin - 2px);
+  width: 100%;
+  height: 100%;
 }
-
-#path4 {
-  width: 34vmin;
-  height: 34vmin;
-  margin-left: calc(-17vmin - 2px);
-  margin-top: calc(-17vmin - 2px);
-}
-
-#path5 {
-  width: 46vmin;
-  height: 46vmin;
-  margin-left: calc(-23vmin - 2px);
-  margin-top: calc(-23vmin - 2px);
-}
-
 
 .path {
   border-radius: 50%;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  border: 2px solid rgba(255, 255, 255, .2);
+  border: 0px solid rgba(255, 255, 255, .2);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
 }
 
-#planet1, #planet2, #planet3, #planet4, #planet5, #sunCircle {
+#planet1, #planet2, #planet3, #sunCircle, #sunCircle{
+  width: 22%;
+  height: 22%;
   border-radius: 50%;
-  left: 50%;
-  top: 50%;
   cursor: pointer;
   position: absolute;
   transition: background-color 1s;
 }
+
+#sunCircle{
+  width: 60%;
+  height: 60%;
+  margin-top: 20%;
+  margin-left: 20%;
+  /*background:#ffbc00;*/
+  background-image: url(../img/space/sun.png);
+  background-size: cover;
+
+}
+
 .rotatePlanet {
   position: relative;
   width: 100%;
@@ -171,21 +163,13 @@ color: #ffbc00;
 }
 
 #rotatePlanet1 {
-  animation: myOrbit 4s linear infinite;
-}
-
-#rotatePlanet2 {
-  animation: myOrbit 5s linear infinite;
-}
-
-#rotatePlanet3 {
-  animation: myOrbit 8s linear infinite;
-}
-
-#rotatePlanet4 {
   animation: myOrbit 15s linear infinite;
 }
 
-#rotatePlanet5 {
+#rotatePlanet2 {
   animation: myOrbit 20s linear infinite;
+}
+
+#rotatePlanet3 {
+  animation: myOrbit 27s linear infinite;
 }

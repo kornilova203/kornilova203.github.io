@@ -2,3 +2,12 @@
     from { transform: rotate(0deg);}
     to   { transform: rotate(360deg);}
 }
+
+@keyframes changeSize {
+    0% {width: 80%;
+    height: 80%;}
+    50% { width: 90%;
+    height: 90%;}
+    100% { width: 80%;
+    height: 80%;}
+}
