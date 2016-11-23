@@ -8,7 +8,7 @@
      font-weight: lighter;
 }
 body {
-  background-color: #03001c;
+  background-color: #000;
   text-align: center;
   margin: 0px; /*убираем отступы от краев*/
   background-image: url('../img/bg.jpg');
