@@ -136,7 +136,7 @@ color: #ffbc00;
   margin: auto;
 }
 
-#planet1, #planet2, #planet3, #sunCircle, #sunCircle{
+#planet1, #planet2, #planet3, .sunCircle{
   width: 22%;
   height: 22%;
   border-radius: 50%;
@@ -145,15 +145,25 @@ color: #ffbc00;
   transition: background-color 1s;
 }
 
-#sunCircle{
+.sunCircle{
   width: 60%;
   height: 60%;
   margin-top: 20%;
   margin-left: 20%;
-  /*background:#ffbc00;*/
-  background-image: url(../img/space/sun.png);
   background-size: cover;
+}
 
+#sunOn {
+  background-image: url(../img/space/sun-on.png);
+  z-index: 2;
+  animation-name: turnOn;
+  animation-duration: 1s;
+  /*animation: turnOn 1s linear 1;*/
+}
+
+#sun-off {
+  background-image: url(../img/space/sun-off.png);
+  z-index: 1;
 }
 
 .rotatePlanet {

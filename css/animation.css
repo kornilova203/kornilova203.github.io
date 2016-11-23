@@ -11,3 +11,29 @@
     100% { width: 80%;
     height: 80%;}
 }
+
+@keyframes turnOn {
+    0%    {opacity: 0;}
+    5%   {opacity: 0.5;}
+    10%   {opacity: 0;}
+    15%   {opacity: 0.5;}
+    40%   {opacity: 0;}
+    50%   { opacity: 0.3;}
+    60%   { opacity: 0;}
+    75%   { opacity: 0.7;}
+    85%   { opacity: 0.3;}
+    100%  { opacity: 1;}
+}
+
+@keyframes blink {
+    0%    {opacity: 0;}
+    5%   {opacity: 0.5;}
+    10%   {opacity: 0;}
+    15%   {opacity: 0.5;}
+    40%   {opacity: 0;}
+    50%   { opacity: 0.3;}
+    60%   { opacity: 0;}
+    75%   { opacity: 0.7;}
+    85%   { opacity: 0.3;}
+    100%  { opacity: 1;}
+}
