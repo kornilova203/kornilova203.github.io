@@ -1,8 +1,24 @@
-﻿@media screen and (max-width: 700px) {/*резиновые блоки*/
-   li {
+
+
+@media screen and (max-width: 600px) {/*резиновые блоки*/
+  menu li {
   display: block; /* Отображать как строчный элемент */
+  /*height: 60px;*/
+  /*line-height: 50px;*/
   }
+
+
   menu {
-    margin-top: -70px;
+
+    line-height: calc((50vh - 40vmin) / 3);
+    /*margin-top: -200px;*/
   }
+}
+
+
+@media screen and (max-height: 450px){
+  menu {
+    font-size: 100%;
+  }
+
 }

@@ -18,7 +18,7 @@ body {
 
 .wrap {
   position: relative;
-  height: 60vh;
+  height: min(60vh, 100vw);
   width: 100vw;
 }
 
@@ -61,7 +61,7 @@ a {
   font-family: CormorantGaramond, tahoma, sans-serif;
   font-weight: lighter;
   text-decoration: none;
-  vertical-align: middle;
+
 }
 
 a { /* анимация */
