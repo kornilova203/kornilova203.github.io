@@ -35,7 +35,7 @@ h1 {
 menu {
   font-size: 150%;
   width: 100%;
-  position: fixed;
+  /*position: fixed;*/
   text-align: center;
   display: block;
   margin: 0;
