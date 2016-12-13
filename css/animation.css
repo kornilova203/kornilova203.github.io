@@ -1,6 +1,16 @@
-@keyframes myOrbit {
+@keyframes orbit1 {
     from { transform: rotate(0deg);}
     to   { transform: rotate(360deg);}
+}
+
+@keyframes orbit2 {
+    from { transform: rotate(90deg);}
+    to   { transform: rotate(430deg);}
+}
+
+@keyframes orbit3 {
+    from { transform: rotate(240deg);}
+    to   { transform: rotate(600deg);}
 }
 
 @keyframes changeSize {
@@ -27,7 +37,7 @@
 
 @keyframes blink {
     0%    {opacity: 0;}
-    5%   {opacity: 0.5;}
+    5%    {opacity: 0.5;}
     10%   {opacity: 0;}
     15%   {opacity: 0.5;}
     40%   {opacity: 0;}

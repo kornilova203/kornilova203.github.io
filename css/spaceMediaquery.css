@@ -1,17 +1,18 @@
-
-
-@media screen and (max-width: 600px) {/*резиновые блоки*/
+@media screen and (max-width: 600px) {
   menu li {
+  position: relative;
   display: block; /* Отображать как строчный элемент */
-  /*height: 60px;*/
-  /*line-height: 50px;*/
   }
 
-
   menu {
+    position: relative;
+    top: -40px;
+    line-height: 50px;
+  }
 
-    line-height: calc((50vh - 40vmin) / 3);
-    /*margin-top: -200px;*/
+  .solarSistem {
+    position: relative;
+    top: -40px;
   }
 }
 
@@ -19,6 +20,11 @@
 @media screen and (max-height: 450px){
   menu {
     font-size: 100%;
+    line-height: 30px;
+    top: -40px;
   }
-
+  
+  .solarSistem {
+    top: -20px;
+  }
 }

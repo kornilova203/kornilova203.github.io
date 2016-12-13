@@ -7,6 +7,7 @@
      src: url(../font/CormorantGaramond-Light.ttf) format("opentype");
      font-weight: lighter;
 }
+
 body {
   background-color: #000;
   text-align: center;
@@ -16,42 +17,31 @@ body {
   background-size: cover;
 }
 
-.wrap {
-  position: relative;
-  height: min(60vh, 100vw);
-  width: 100vw;
-}
-
 h1 {
-  display: block;
   margin: 0;
-  height: calc(50vh - 30vmin);
-  line-height: calc(50vh - 30vmin);
-  width: 100%;
+  height: calc(50vh - 31vmin);
+  line-height: calc(50vh - 31vmin);
   font-size: 150%;
   color: #ffffff;
 }
 
 menu {
   font-size: 150%;
-  width: 100%;
-  /*position: fixed;*/
   text-align: center;
   display: block;
   margin: 0;
   height: calc(50vh - 30vmin);
   line-height: calc(50vh - 30vmin);
-  width: 100%;
   padding: 0;
 }
 
-ul {
+menu ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-li {
+menu li {
   display: inline; /* Отображать как строчный элемент */
   padding: 0px 30px; /* Поля вокруг текста */
 }
@@ -61,14 +51,7 @@ a {
   font-family: CormorantGaramond, tahoma, sans-serif;
   font-weight: lighter;
   text-decoration: none;
-
-}
-
-a { /* анимация */
--webkit-transition-duration: 0.5s;
--o-transition-duration: 0.5s;
--moz-transition-duration: 0.5s;
-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
 a:hover { /* цвет при наведении */
@@ -83,52 +66,31 @@ color: #ffbc00;
   position: relative;
 }
 
-.spaceObjects { /*общее для планет*/
-  background-size: cover; /*Картинка полностью заполняет div*/
-  left: 50%; /*Выравниваем левый верхний угол по центру*/
-  top: 50%;
-  position: absolute;
+.planet {
+  width: 20%;
+  height: auto;
 }
 
-#planet1 {
-  margin-left: 50%;
-  background-image: url(../img/space/planet1.png);
-  background-size: cover;
-}
-
-#planet2 {
-  margin-top: 50%;
-  background-image: url(../img/space/planet2.png);
-  background-size: cover;
-}
-
-#planet3 {
-  margin-top: 78%;
-  margin-left: 50%;
-  background-image: url(../img/space/planet3.png);
-  background-size: cover;
-}
-
-
-#path1 {
+.path1 {
   width: 50%;
   height: 50%;
+  animation: orbit1 15s linear infinite;
 }
 
-#path2 {
-  width: 70%;
-  height: 70%;
+.path2 {
+  width: 73%;
+  height: 73%;
+  animation: orbit2 20s linear infinite;
 }
 
-#path3 {
+.path3 {
   width: 100%;
   height: 100%;
+  animation: orbit3 27s linear infinite;
 }
 
 .path {
-  border-radius: 50%;
   position: absolute;
-  border: 0px solid rgba(255, 255, 255, .2);
   top: 0;
   right: 0;
   bottom: 0;
@@ -136,25 +98,15 @@ color: #ffbc00;
   margin: auto;
 }
 
-#planet1, #planet2, #planet3, .sunCircle{
-  width: 22%;
-  height: 22%;
-  border-radius: 50%;
-  cursor: pointer;
+.sun {
+  width: 50%;
   position: absolute;
-  transition: background-color 1s;
-}
-
-.sunCircle{
-  width: 60%;
-  height: 60%;
-  margin-top: 20%;
-  margin-left: 20%;
-  background-size: cover;
+  top:25%;
+  left: 25%;
+  cursor: pointer;
 }
 
 #sunOn {
-  background-image: url(../img/space/sun-on.png);
   z-index: 2;
   animation-name: turnOn;
   animation-duration: 1s;
@@ -162,24 +114,5 @@ color: #ffbc00;
 }
 
 #sun-off {
-  background-image: url(../img/space/sun-off.png);
   z-index: 1;
-}
-
-.rotatePlanet {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-#rotatePlanet1 {
-  animation: myOrbit 15s linear infinite;
-}
-
-#rotatePlanet2 {
-  animation: myOrbit 20s linear infinite;
-}
-
-#rotatePlanet3 {
-  animation: myOrbit 27s linear infinite;
 }
