@@ -5,7 +5,7 @@
 
 @keyframes orbit2 {
     from { transform: rotate(90deg);}
-    to   { transform: rotate(430deg);}
+    to   { transform: rotate(450deg);}
 }
 
 @keyframes orbit3 {
