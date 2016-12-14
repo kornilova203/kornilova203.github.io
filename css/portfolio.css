@@ -1,6 +1,9 @@
 
 body {
-  background-color: #03001c;
+  background-color: #000;
+  margin: 0px; /*убираем отступы от краев*/
+  background-image: url('../img/bg.jpg');
+  background-repeat: repeat;
   font-family: 'calibri', sans-serif;
   font-weight : lighter;
   color: white;
