@@ -72,16 +72,34 @@ main {
   max-width: 1060px;
   margin: 0 auto;
   padding: 0 30px;
-  padding-top: 60px;
   box-sizing: border-box;
+}
+
+
+
+section {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+h2{
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 section img {
   width: 100%;
-}
-
-section {
-    margin-top: 80px;
+  height: 100%;
 }
 
 section footer {
@@ -118,7 +136,7 @@ color: #ffbc00;
   z-index: 10;
 	top:0;
 	right:0;
-	background:rgba(0, 0, 0, 0.3) url(../img/nav.png) no-repeat center center;
+	background:url(../img/nav.png) no-repeat center center;
 	height:50px;
 	width:50px;
 }

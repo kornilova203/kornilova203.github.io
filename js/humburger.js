@@ -19,9 +19,11 @@ function hideNavUl () {
   open = 0;
 }
 
-window.onresize = function checkSize() {
+window.addEventListener("resize", checkSize);
+
+function checkSize() {
   if (window.innerWidth > 540)
-    navList.style.display = 'flex';
+    showNavUl();
   else
-  navList.style.display = 'none';
+    hideNavUl();
 }

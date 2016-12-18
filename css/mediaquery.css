@@ -1,5 +1,5 @@
 ﻿@media screen and (max-width: 540px) {
-  header {
+  /*header {
     position: static;
     height: 30px;
     padding-bottom: 10px;
@@ -9,6 +9,11 @@
     font-size: 24px;
     position: relative;
     top: 25px;
+  }*/
+
+  h1 {
+    padding-top: 7px;
+    font-size: 24px;
   }
 
   h2 {
@@ -35,10 +40,10 @@
     z-index: 200;
   }
 
-  header {
+  /*header {
     position: relative;
     top: -15px;
-  }
+  }*/
 
 #nav-list {
   display: none;
@@ -61,7 +66,7 @@
   }
 
   footer {
-    margin-top: 30px;
+    margin-top: 10px;
   }
 }
 
