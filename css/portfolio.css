@@ -110,3 +110,15 @@ color: #ffbc00;
   opacity: .7;
   width: 30px;
 }
+
+.humburger-button {
+  display:none; /* Hide from browsers that don't support media queries */
+  cursor:pointer;
+	position:fixed;
+  z-index: 10;
+	top:0;
+	right:0;
+	background:rgba(0, 0, 0, 0.3) url(../img/nav.png) no-repeat center center;
+	height:50px;
+	width:50px;
+}
