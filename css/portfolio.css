@@ -6,6 +6,7 @@
 
 @viewport {
   width: device-width;
+  height: device-height;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600');
