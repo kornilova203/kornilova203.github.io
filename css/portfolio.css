@@ -1,74 +1,112 @@
+/*@font-face {
+    font-family: CormorantGaramond;
+    src: url(../font/CormorantGaramond-Light.ttf) format("opentype");
+    font-weight: lighter;
+}*/
+
+@viewport {
+  width: device-width;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+html, body {
+  height: 100%;
+  max-height: 100%;
+}
 
 body {
-  background-color: #000;
+  background-color: #161616;
   margin: 0px; /*убираем отступы от краев*/
-  background-image: url('../img/bg.jpg');
-  background-repeat: repeat;
-  font-family: 'calibri', sans-serif;
-  font-weight : lighter;
+  font-family: 'Cormorant Garamond', serif;
   color: white;
 }
 
-img {
-   max-width: 100%;
-   height: auto;
-   width: auto\9; /* ie8 */
+h1, h2 {
+  font-weight: normal;
 }
 
-#pagewrap {
-   width: 1180px;
-   margin: 0 auto;
+header {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 10%,rgba(0,0,0,0) 100%);
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  padding-bottom: 50px;
 }
 
-main {
-  float: right;
-  background-color: #0065ff;
-  width: 1000px; /*ширина*/
+h1 {
+  margin-top: 0;
+  text-align: center;
 }
 
 nav {
   font-size: 18px;
-  margin-top: 60px;
-  position: fixed;
-  float: left;
-  width: 180px;
-  background-color: #1400f1;
 }
 
-ul {
-  background-color: #ff00f1;
-  padding: 0px;
-  margin: 0px;
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 600px;
+  margin: 15px auto;
+  padding: 0 15px;
+  text-align: center;
   list-style-type: none;
 }
 
-li{
-  margin: 0px;
+nav li {
+  font-size: 18px;
+  display: inline;
 }
 
+.wrap {
+  width: 100%;
+
+}
+
+main {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 30px;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+
+section img {
+  width: 100%;
+}
+
+section {
+    margin-top: 80px;
+}
+
+section footer {
+  text-align: right;
+  font-size: 16px;
+  margin-top: 15px;
+}
 a {
+  opacity: .8;
   color: white;
   text-decoration: none;
+  transition-duration: 0.5s;
 }
 
-a { /* анимация */
--webkit-transition-duration: 0.5s;
--o-transition-duration: 0.5s;
--moz-transition-duration: 0.5s;
-transition-duration: 0.5s;
-}
 a:hover { /* цвет при наведении */
 color: #ffbc00;
 }
 
-#myName {
-
-  margin-top: 20px;
-  height: 60px;
-  clear: both;
-  float: right;
+.footer {
+  height: 100px;
+  text-align: center;
 }
 
-main, nav, ul {
-  background-color: transparent;
+.footer img{
+  margin: 20px 10px;
+  opacity: .7;
+  width: 30px;
 }

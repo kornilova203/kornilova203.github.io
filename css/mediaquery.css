@@ -1,13 +1,14 @@
-﻿@media screen and (max-width: 1400px) {/*резиновые блоки*/
-   #pagewrap {
-      width: 84%;
-   }
-   main {
-     width: calc(100% - 180px);
-   }
+﻿@media screen and (max-width: 540px) {
+  nav li {
+    font-size: 12px;
+    display: inline;
+  }
+  nav ul {
+    padding: 0 5px;
+  }
 }
 
-@media screen and (max-width: 800px) {/*меню сверху*/
+/*@media screen and (max-width: 800px) {
    #pagewrap {
       width: 90%;
    }
@@ -21,4 +22,4 @@
      position: relative;
      float: none;
    }
-}
+}*/
