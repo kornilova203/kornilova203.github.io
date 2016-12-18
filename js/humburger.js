@@ -1,6 +1,7 @@
 var open = 0;
+var navList = document.querySelectorAll('nav ul')[0];
 var button = document.getElementsByClassName("humburger-button")[0];
-var navList = document.getElementById('nav-list');
+/*var navList = document.getElementById('nav-list');*/
 
 button.onclick = function () {
     if (!open)
@@ -16,4 +17,11 @@ function showNavUl () {
 function hideNavUl () {
   navList.style.display = 'none';
   open = 0;
+}
+
+window.onresize = function checkSize() {
+  if (window.innerWidth > 540)
+    navList.style.display = 'flex';
+  else
+  navList.style.display = 'none';
 }
