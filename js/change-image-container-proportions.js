@@ -28,8 +28,8 @@ function changeProps (i) {
   }
 }
 
+/*window.onresize = changeAllProps;*/
 window.addEventListener("resize", changeAllProps);
-
 
 function changeAllProps() {
   getNewSize();
@@ -44,6 +44,7 @@ window.onscroll = function scrl(){
   for (var i = 0; i < headers.length; i++) {
     var toTop = i*window.innerHeight - window.pageYOffset;
     toTop = 1 - toTop / window.innerHeight;
+
     if (toTop > 0 && toTop < 1)
       headers[i].style.opacity = toTop;
   }
