@@ -29,9 +29,7 @@ function changeProps (i) {
 }
 
 changeAllProps();
-if(isMobile.any())  //убираем нижнюю панель на мобильных
-  window.addEventListener("load", function() { window. scrollTo(0, 0); });
-else //если мы заходим с компа, то делать ресайз
+if(!isMobile.any()) //если мы заходим с компа, то делать ресайз
   window.addEventListener("resize", changeAllProps);
 
 function changeAllProps() {
