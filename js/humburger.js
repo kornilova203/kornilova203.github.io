@@ -1,3 +1,10 @@
+window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
+
 var open = 0;
 var navList = document.querySelectorAll('nav ul')[0];
 var button = document.getElementsByClassName("humburger-button")[0];
