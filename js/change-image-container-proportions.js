@@ -20,11 +20,11 @@ function changeProps (i) {
   containers[i].style.height = heightOfContainer + 'px';
   if (heightOfContainer > widthOfContainer / 16 * 9) {
     images[i].style.height =  heightOfContainer + 'px';
-    images[i].style.width =  'auto';
+    images[i].style.width =  '2000px';
   }
   else {
-    images[i].style.width =  widthOfContainer + 'px';
-    images[i].style.height =  'auto';
+    images[i].style.width =  '2000px';
+    images[i].style.height =  widthOfContainer / 16 * 9 + 'px';
 
   }
 }
