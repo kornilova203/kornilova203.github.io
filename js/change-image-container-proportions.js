@@ -16,6 +16,7 @@ function getNewSize(){
 
 
 function changeProps (i) {
+  alert('changeProps');
   //containers[i].style.width = widthOfContainer + 'px';
   containers[i].style.height = heightOfContainer + 'px';
   if (heightOfContainer > widthOfContainer / 16 * 9) {
@@ -34,6 +35,7 @@ if(!isMobile.any()) //если мы заходим с компа, то дела�
   window.addEventListener("resize", changeAllProps);
 
 function changeAllProps() {
+  alert('changeAllProps');
   getNewSize();
   for (var i = 0; i < containers.length; i++) {
     changeProps(i);
