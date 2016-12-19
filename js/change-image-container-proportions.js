@@ -14,6 +14,14 @@ function getNewSize(){
    heightOfContainer = 562;
 }
 
+function changeAllProps() {
+  alert('changeAllProps');
+  getNewSize();
+  for (var i = 0; i < containers.length; i++) {
+    changeProps(i);
+  }
+}
+
 
 function changeProps (i) {
   alert('changeProps');
@@ -30,17 +38,12 @@ function changeProps (i) {
   }
 }
 
+alert('hello');
 changeAllProps();
 if(!isMobile.any()) //если мы заходим с компа, то делать ресайз
   window.addEventListener("resize", changeAllProps);
 
-function changeAllProps() {
-  alert('changeAllProps');
-  getNewSize();
-  for (var i = 0; i < containers.length; i++) {
-    changeProps(i);
-  }
-}
+
 
 
 
