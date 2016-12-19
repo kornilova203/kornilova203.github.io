@@ -28,8 +28,10 @@ function changeProps (i) {
   }
 }
 
-/*window.onresize = changeAllProps;*/
-window.addEventListener("resize", changeAllProps);
+changeAllProps();
+
+if(!isMobile.any()) //если мы заходим с компа, то делать ресайз
+  window.addEventListener("resize", changeAllProps);
 
 function changeAllProps() {
   getNewSize();
@@ -38,7 +40,7 @@ function changeAllProps() {
   }
 }
 
-changeAllProps();
+
 
 window.onscroll = function scrl(){
   for (var i = 0; i < headers.length; i++) {
