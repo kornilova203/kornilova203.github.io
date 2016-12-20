@@ -8,7 +8,7 @@ function getNewSizeOfContainer(){
   if (window.innerWidth > 1060)
     widthOfContainer = 1000;
   else
-    widthOfContainer = window.innerWidth - 60 - 18;
+    widthOfContainer = window.innerWidth - 60 - 17;
   heightOfContainer = window.innerHeight * 0.6;
   if (heightOfContainer > 562)
    heightOfContainer = 562;
@@ -27,7 +27,7 @@ function changeAllProps() {
 var heightOfImg;
 function getHeightOfImage() {
   if(!mobileAndTabletcheck()) //если мы заходим с компа, то делать ресайз
-    heightOfImg = 'calc(100% + 50px)';
+    heightOfImg = 'calc(100% + 25px)';
   else
     heightOfImg = '100%';
 }
@@ -35,15 +35,17 @@ function getHeightOfImage() {
 
 
 function changeProps (i) {
-  var head = document.querySelectorAll('h1')[0];
-  if (widthOfContainer > heightOfContainer / 11 * 9 && widthOfContainer < heightOfContainer / 11 * 15) {
+
+  //var head = document.querySelectorAll('h1')[0];
+  //head.innerHTML = widthOfContainer;
+  /*if (widthOfContainer > heightOfContainer / 11 * 9 && widthOfContainer < heightOfContainer / 11 * 15) {
     images[i].style.height =  'calc(100% + 250px)';
     images[i].style.width =  'auto';
     //head.innerHTML = 'danger';
   }
-  else {
+  else {*/
     //head.innerHTML = 'ok';
-    if (heightOfContainer > widthOfContainer) {
+    if (heightOfContainer > widthOfContainer / 16 * 9) {
       images[i].style.height =  heightOfImg;
       images[i].style.width =  'auto';
     }
@@ -51,7 +53,7 @@ function changeProps (i) {
       images[i].style.width = '100%';
       images[i].style.height = 'auto';
     }
-  }
+  //}
 
 
 }
