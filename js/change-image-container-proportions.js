@@ -35,14 +35,25 @@ function getHeightOfImage() {
 
 
 function changeProps (i) {
-  if (heightOfContainer > widthOfContainer) {
-    images[i].style.height =  heightOfImg;
+  var head = document.querySelectorAll('h1')[0];
+  if (widthOfContainer > heightOfContainer / 11 * 9 && widthOfContainer < heightOfContainer / 11 * 15) {
+    images[i].style.height =  'calc(100% + 250px)';
     images[i].style.width =  'auto';
+    head.innerHTML = 'danger';
   }
   else {
-    images[i].style.width = '100%';
-    images[i].style.height = 'auto';
+    head.innerHTML = 'ok';
+    if (heightOfContainer > widthOfContainer) {
+      images[i].style.height =  heightOfImg;
+      images[i].style.width =  'auto';
+    }
+    else {
+      images[i].style.width = '100%';
+      images[i].style.height = 'auto';
+    }
   }
+
+
 }
 
 window.mobileAndTabletcheck = function() {
