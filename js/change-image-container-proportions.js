@@ -48,6 +48,9 @@ window.mobileAndTabletcheck = function() {
 changeAllProps();
 if(!mobileAndTabletcheck()) //если мы заходим с компа, то делать ресайз
   window.addEventListener("resize", changeAllProps);
+else {
+  window.addEventListener("orientationchange", changeAllProps);
+}
 
 
 

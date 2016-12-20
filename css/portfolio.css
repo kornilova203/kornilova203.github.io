@@ -75,8 +75,6 @@ main {
   box-sizing: border-box;
 }
 
-
-
 section {
     display: flex;
     flex-flow: column;
@@ -96,12 +94,14 @@ h2{
   max-height: 562px;
   display: flex;
   justify-content: center;
-  align-items: center;
+/*  align-items: stretch;*/
   overflow: hidden;
 }
 
 section img {
   flex-shrink: 0;
+  height: 100%;
+  width: auto;
 }
 
 section footer {
