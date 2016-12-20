@@ -39,10 +39,10 @@ function changeProps (i) {
   if (widthOfContainer > heightOfContainer / 11 * 9 && widthOfContainer < heightOfContainer / 11 * 15) {
     images[i].style.height =  'calc(100% + 250px)';
     images[i].style.width =  'auto';
-    head.innerHTML = 'danger';
+    //head.innerHTML = 'danger';
   }
   else {
-    head.innerHTML = 'ok';
+    //head.innerHTML = 'ok';
     if (heightOfContainer > widthOfContainer) {
       images[i].style.height =  heightOfImg;
       images[i].style.width =  'auto';
