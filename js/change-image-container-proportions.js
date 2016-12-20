@@ -9,7 +9,7 @@ function getNewSizeOfContainer(){
     widthOfContainer = 1000;
   else
     widthOfContainer = window.innerWidth - 60 - 18;
-  heightOfContainer = window.outerHeight / 1.5;
+  heightOfContainer = window.innerHeight / 1.5;
   if (heightOfContainer > 562)
    heightOfContainer = 562;
 }
