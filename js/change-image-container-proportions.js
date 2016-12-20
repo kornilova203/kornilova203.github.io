@@ -47,16 +47,10 @@ window.mobileAndTabletcheck = function() {
   return check;
 };
 
-//alert (mobileAndTabletcheck());
-
-function alertOrientation() {
-  alert('orientationchange');
-}
-
 changeAllProps();
 if(!mobileAndTabletcheck()) {//если мы заходим с компа, то делать ресайз
   window.addEventListener("resize", changeAllProps);
-  window.addEventListener("orientationchange", alertOrientation);
+  window.addEventListener("scroll", scrl);
 }
 else {
   window.addEventListener("orientationchange", changeAllProps);
@@ -71,14 +65,14 @@ function getNumOfScreen(){
 
 var currentScreen=0;
 
-window.onscroll = function scrl(){
+function scrl(){
   var newScreen = getNumOfScreen();
   if (currentScreen != newScreen) {
     currentScreen = newScreen;
     document.body.style.backgroundColor = bgColors[currentScreen];
   }
-  var head = document.querySelectorAll('h1')[0];
-  head.innerHTML = getNumOfScreen();
+  /*var head = document.querySelectorAll('h1')[0];
+  head.innerHTML = getNumOfScreen();*/
   var toTop = currentScreen*window.innerHeight - window.pageYOffset;
   images[currentScreen].style.top = -toTop / 7 + 'px';
   toTop = (currentScreen+1)*window.innerHeight - window.pageYOffset;
