@@ -94,7 +94,7 @@ h2{
   max-height: 562px;
   display: flex;
   justify-content: center;
-/*  align-items: stretch;*/
+  align-items: center;
   overflow: hidden;
 }
 
