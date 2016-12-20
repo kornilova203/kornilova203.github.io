@@ -3,7 +3,6 @@ var images = document.querySelectorAll('.img-container img');
 var headers = document.querySelectorAll('h2');
 var widthOfContainer;
 var heightOfContainer;
-var bgColors = ['#111', '#222','#333','#444','#555'];
 
 function getNewSizeOfContainer(){
   if (window.innerWidth > 1060)
@@ -36,7 +35,7 @@ function getHeightOfImage() {
 
 
 function changeProps (i) {
-  if (heightOfContainer > widthOfContainer / 16 * 9) {
+  if (heightOfContainer > widthOfContainer) {
     images[i].style.height =  heightOfImg;
     images[i].style.width =  'auto';
   }
@@ -54,6 +53,7 @@ window.mobileAndTabletcheck = function() {
 
 getHeightOfImage();
 changeAllProps();
+document.body.style.backgroundColor = bgColors[0];
 if(!mobileAndTabletcheck()) {//если мы заходим с компа, то делать ресайз
   window.addEventListener("resize", changeAllProps);
   window.addEventListener("scroll", scrl);
@@ -76,6 +76,10 @@ function scrl(){
   if (currentScreen != newScreen) {
     currentScreen = newScreen;
     document.body.style.backgroundColor = bgColors[currentScreen];
+    /*var head = document.querySelectorAll('header')[0];
+    head.style.opacity = headOpacity[currentScreen];
+    var nav = document.querySelectorAll('nav')[0];
+    nav.style.opacity = 1;*/
   }
   /*var head = document.querySelectorAll('h1')[0];
   head.innerHTML = getNumOfScreen();*/
