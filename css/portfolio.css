@@ -15,10 +15,13 @@
 html, body {
   height: 100%;
   max-height: 100%;
+
 }
 
 body {
   background-color: #161616;
+  transition-property: background-color;
+	transition-duration: 2s;
   margin: 0px; /*убираем отступы от краев*/
   font-family: 'Cormorant Garamond', serif;
   color: white;
@@ -90,7 +93,7 @@ h2{
 
 .img-container {
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   max-height: 562px;
   display: flex;
   justify-content: center;
@@ -101,6 +104,8 @@ h2{
 
 section img {
   position: relative;
+/*  transition-property: top;
+  transition-duration: 0.1s;*/
   flex-shrink: 0;
 }
 

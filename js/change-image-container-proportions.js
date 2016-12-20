@@ -3,13 +3,14 @@ var images = document.querySelectorAll('.img-container img');
 var headers = document.querySelectorAll('h2');
 var widthOfContainer;
 var heightOfContainer;
+var bgColors = ['#111', '#222','#333','#444','#555'];
 
 function getNewSizeOfContainer(){
   if (window.innerWidth > 1060)
     widthOfContainer = 1000;
   else
     widthOfContainer = window.innerWidth - 60 - 18;
-  heightOfContainer = window.innerHeight * 0.6;
+  heightOfContainer = window.innerHeight * 0.7;
   if (heightOfContainer > 562)
    heightOfContainer = 562;
 }
@@ -61,17 +62,33 @@ else {
   window.addEventListener("orientationchange", changeAllProps);
 }
 
+/*  RETURNS NUMBRE OF SCREEN which begins to be shown*/
+function getNumOfScreen(){
+  if (window.pageYOffset == 0)
+    return 0;
+  return Math.floor((window.pageYOffset - window.innerHeight/2) / window.innerHeight) + 1;
+}
 
-
-
+var currentScreen=0;
 
 window.onscroll = function scrl(){
-  for (var i = 0; i < headers.length; i++) {
+  var newScreen = getNumOfScreen();
+  if (currentScreen != newScreen) {
+    currentScreen = newScreen;
+    document.body.style.backgroundColor = bgColors[currentScreen];
+  }
+  var head = document.querySelectorAll('h1')[0];
+  head.innerHTML = getNumOfScreen();
+  var toTop = currentScreen*window.innerHeight - window.pageYOffset;
+  images[currentScreen].style.top = -toTop / 7 + 'px';
+  toTop = (currentScreen+1)*window.innerHeight - window.pageYOffset;
+  images[currentScreen+1].style.top = -toTop / 7 + 'px';
+  /*for (var i = 0; i < headers.length; i++) {
     var toTop = i*window.innerHeight - window.pageYOffset;
     images[i].style.top = -toTop / 7 + 'px';
     toTop = 1 - toTop / window.innerHeight;
 
     if (toTop > 0 && toTop < 1)
       headers[i].style.opacity = toTop;
-  }
+  }*/
 }
