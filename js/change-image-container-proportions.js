@@ -26,10 +26,13 @@ function changeAllProps() {
 }
 
 var heightOfImg;
-if(!mobileAndTabletcheck()) //если мы заходим с компа, то делать ресайз
-  heightOfImg = 'calc(100% + 50px)';
-else
-  heightOfImg = '100%';
+function getHeightOfImage() {
+  if(!mobileAndTabletcheck()) //если мы заходим с компа, то делать ресайз
+    heightOfImg = 'calc(100% + 50px)';
+  else
+    heightOfImg = '100%';
+}
+
 
 
 function changeProps (i) {
@@ -49,7 +52,7 @@ window.mobileAndTabletcheck = function() {
   return check;
 };
 
-
+getHeightOfImage();
 changeAllProps();
 if(!mobileAndTabletcheck()) {//если мы заходим с компа, то делать ресайз
   window.addEventListener("resize", changeAllProps);
