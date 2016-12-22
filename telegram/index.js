@@ -8,6 +8,6 @@ alert( obj.result[0].message.text);
 
 if (obj.result[0].message.text == 'hi') {
 	alert('say hi');
-    var answer = new XMLHttpRequest();
+    	var answer = new XMLHttpRequest();
 	answer.open('GET', 'https://api.telegram.org/bot321375343:AAET-7j3Pz0WJtTSrpLY60KDl0NTfChxGQI/sendmessage?chat_id=52331883&text=hilusi', false);
 }
