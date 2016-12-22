@@ -2,7 +2,7 @@
 var xhr = new XMLHttpRequest();
 
 // 2. Конфигурируем его: GET-запрос на URL 'phones.json'
-xhr.open('GET', 'https://www.google.ru/', false);
+xhr.open('GET', 'https://api.telegram.org/bot321375343:AAET-7j3Pz0WJtTSrpLY60KDl0NTfChxGQI/getMe', false);
 
 // 3. Отсылаем запрос
 xhr.send();
