@@ -2,7 +2,7 @@
 var xhr = new XMLHttpRequest();
 
 // 2. Конфигурируем его: GET-запрос на URL 'phones.json'
-xhr.open('GET', 'index.html', false);
+xhr.open('GET', 'https://www.google.ru/', false);
 
 // 3. Отсылаем запрос
 xhr.send();
