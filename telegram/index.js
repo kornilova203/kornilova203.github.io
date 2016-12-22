@@ -1,29 +1,13 @@
-// 1. Создаём новый объект XMLHttpRequest
 var xhr = new XMLHttpRequest();
-
-// 2. Конфигурируем его: GET-запрос на URL 'phones.json'
-xhr.open('GET', 'https://api.telegram.org/bot321375343:AAET-7j3Pz0WJtTSrpLY60KDl0NTfChxGQI/getMe', false);
-xhr.open('GET', 'https://api.telegram.org/bot321375343:AAET-7j3Pz0WJtTSrpLY60KDl0NTfChxGQI/sendmessage?chat_id=52331883&text=hilusi', false);
-
-//var numbers = "[0, 1, 2, 3]";
-
-numbers = JSON.parse(xhr);
-
-//alert( numbers[1] ); // 1
-
-//var jsonToJs = JSON.parse(xhr.responseText);
-//alert('hello!');
-//alert(jsonToJs.ok);
-
-// 3. Отсылаем запрос
+xhr.open('GET', 'https://api.telegram.org/bot321375343:AAET-7j3Pz0WJtTSrpLY60KDl0NTfChxGQI/getupdates?offset=70969895', false);
 xhr.send();
 
-// 4. Если код ответа сервера не 200, то это ошибка
-if (xhr.status != 200) {
-  // обработать ошибку
-  alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
-} else {
-  // вывести результат
-  alert( xhr.responseText ); // responseText -- текст ответа.
-  
+var json = '{"ok":true,"result":{"id":321375343,"first_name":"lusinda","username":"lusindaBot"}}';
+obj = JSON.parse(xhr.responseText);
+alert( obj.result[0].message.text);
+
+if (obj.result[0].message.text == 'hi') {
+	alert('say hi');
+    var answer = new XMLHttpRequest();
+	answer.open('GET', 'https://api.telegram.org/bot321375343:AAET-7j3Pz0WJtTSrpLY60KDl0NTfChxGQI/sendmessage?chat_id=52331883&text=hilusi', false);
 }
