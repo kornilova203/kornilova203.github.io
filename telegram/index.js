@@ -6,8 +6,8 @@ xhr.open('GET', 'https://api.telegram.org/bot321375343:AAET-7j3Pz0WJtTSrpLY60KDl
 xhr.open('GET', 'https://api.telegram.org/bot321375343:AAET-7j3Pz0WJtTSrpLY60KDl0NTfChxGQI/sendmessage?chat_id=52331883&text=hilusi', false);
 
 var jsonToJs = JSON.parse(xhr.responseText);
-alert('hello!');
-alert(jsonToJs.ok);
+//alert('hello!');
+//alert(jsonToJs.ok);
 
 // 3. Отсылаем запрос
 xhr.send();
