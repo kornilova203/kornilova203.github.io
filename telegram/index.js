@@ -25,4 +25,5 @@ if (xhr.status != 200) {
 } else {
   // вывести результат
   alert( xhr.responseText ); // responseText -- текст ответа.
+  
 }
