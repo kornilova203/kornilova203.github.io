@@ -119,4 +119,5 @@ color: #ffbc00;
 #sun-off {
   z-index: 1;
   opacity: 0;
+  animation: turnOn 2s linear 1;
 }
