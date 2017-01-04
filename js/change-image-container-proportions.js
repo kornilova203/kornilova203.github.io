@@ -8,6 +8,8 @@ if(!mobileAndTabletcheck()) //если мы с компа, то изображе
 else
   heightOfImg = '100%';
 
+changeAllProps();
+
 document.body.style.backgroundColor = bgColors[0];
 if(!mobileAndTabletcheck()) {//если мы заходим с компа, то делать ресайз
   window.addEventListener("resize", changeAllProps);
@@ -22,7 +24,7 @@ function getNewSizeOfContainer(){
     widthOfContainer = 1000;
   else
     widthOfContainer = window.innerWidth - 60 - 17;
-  heightOfContainer = window.innerHeight * 0.6 + 25;
+  heightOfContainer = window.innerHeight * 0.6;
   if (heightOfContainer > 562)
    heightOfContainer = 562;
 }
@@ -41,7 +43,7 @@ function mobileAndTabletcheck() {
 };
 
 function changeProps (i) {
-    if (heightOfContainer > widthOfContainer / 16 * 11) {
+    if (heightOfContainer > widthOfContainer / 16 * 11 - 25) {
       images[i].style.height =  heightOfImg;
       images[i].style.width =  'auto';
     }
