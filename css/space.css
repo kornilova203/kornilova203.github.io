@@ -110,13 +110,11 @@ color: #ffbc00;
 
 #sunOn {
   z-index: 2;
-  animation-name: turnOn;
-  animation-duration: 1s;
   opacity: 0;
   animation: turnOn 2s linear 1;
 }
 
-#sun-off {
+#sunOff {
   z-index: 1;
   opacity: 0;
   animation: turnOn 2s linear 1;
