@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    opacity: 0.7;
+
+}
+
+html, body {
+  height: 100%;
+  max-height: 100%;
+}
+
+body {
+  background-color: #161616;
+  transition-property: background-color;
+	transition-duration: 2s;
+  margin: 0px; /*убираем отступы от краев*/
+  font-family: 'Cormorant Garamond', serif;
+  color: white;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+header {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 10%,rgba(0,0,0,0) 100%);
+  transition-property: opacity;
+	transition-duration: 2s;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  padding-bottom: 50px;
+  top: 0px;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+nav {
+  font-size: 18px;
+  opacity: 1;
+}
+
+#nav-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 600px;
+  margin: 15px auto;
+  padding: 0 15px;
+  text-align: center;
+  list-style-type: none;
+}
+
+nav li {
+  font-size: 18px;
+  display: inline;
+}
+
+main {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 30px;
+  margin-top: 130px;
+  box-sizing: border-box;
+}
+
+h2{
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+a {
+  opacity: .8;
+  color: white;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+
+a:hover { /* цвет при наведении */
+color: #ffbc00;
+}
+
+.footer {
+  height: 100px;
+  text-align: center;
+}
+
+.footer img{
+  margin: 20px 10px;
+  opacity: .7;
+  width: 30px;
+}
+
+.humburger-button {
+  display:none; /* Hide from browsers that don't support media queries */
+  cursor:pointer;
+	position:fixed;
+  z-index: 10;
+	top:0;
+	right:0;
+	background:url(../img/nav.png) no-repeat center center;
+	height:50px;
+	width:50px;
+}
+
+main img {
+  padding-bottom: 20px;
+  height: auto;
+}
+
+.vertical {
+  width: calc(50% - 10px);
+}
+
+.horizontal {
+  width: 100%;
+}
+
+.right-image {
+  float: right;
+}
+
+.images {
+  /*display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;*/
+}
+
+@media screen and (max-width: 540px) {
+  main{
+    margin-top: 70px;
+  }
+  .vertical {
+    width: 100%;
+  }
+}
