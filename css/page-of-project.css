@@ -6,7 +6,7 @@
 p {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     opacity: 0.7;
 
 }
@@ -79,7 +79,7 @@ main {
 h2{
   position: relative;
   margin-bottom: 20px;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 a {
@@ -131,12 +131,6 @@ main img {
 
 .right-image {
   float: right;
-}
-
-.images {
-  /*display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;*/
 }
 
 @media screen and (max-width: 540px) {
