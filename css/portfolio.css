@@ -109,6 +109,8 @@ h2{
 section img {
   position: relative;
   flex-shrink: 0;
+  height: 100%;
+  width: auto;
 }
 
 section footer {
