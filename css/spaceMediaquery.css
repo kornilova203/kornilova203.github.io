@@ -1,13 +1,15 @@
-@media screen and (max-width: 600px) {
-  menu li {
-  position: relative;
-  display: block; /* Отображать как строчный элемент */
-  }
-
-  menu {
+@media screen and (max-width: 600px) and (orientation:portrait) {
+nav ul {
+  flex-direction: column;
+  justify-content: center;
+}
+  nav {
     position: relative;
     top: -40px;
-    line-height: 50px;
+  }
+
+  nav li {
+    margin: 5px;
   }
 
   .solarSistem {
@@ -16,14 +18,24 @@
   }
 }
 
-
-@media screen and (max-height: 450px){
-  menu {
-    font-size: 100%;
-    line-height: 30px;
-  }
-
+@media screen and (max-width: 600px) and (orientation: landscape) {
   .solarSistem {
+    position: relative;
+    top: -10px;
+  }
+  nav {
+    position: relative;
     top: -30px;
   }
+}
+
+
+@media screen and (max-height: 480px) {
+  nav {
+    font-size: 110%;
+    line-height: 30px;
+  }
+  /*.solarSistem {
+    top: -30px;
+  }*/
 }

@@ -20,6 +20,10 @@
     display:block;
   }
 
+  header {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 10%,rgba(0,0,0,0) 60%);
+  }
+
   nav {
     padding-bottom: 100px;
     background: linear-gradient(to bottom, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.70) 65%, rgba(0,0,0,0) 100%);
@@ -79,6 +83,15 @@
     width: 100%;
     height: auto;
   }
+
+}
+@media all and (orientation: landscape) and (max-width: 540px) {
+  .img-container {
+    height: 50vh;
+    width: 80%;
+    margin: 0 auto;
+  }
+
 }
 
 @media all and (orientation: portrait){
@@ -86,4 +99,5 @@
     height: 100%;
     width: auto;
   }
+
 }
