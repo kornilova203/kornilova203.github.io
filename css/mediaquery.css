@@ -73,3 +73,17 @@
      float: none;
    }
 }*/
+
+@media all and (orientation: landscape){
+  section img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media all and (orientation: portrait){
+  section img {
+    height: 100%;
+    width: auto;
+  }
+}
