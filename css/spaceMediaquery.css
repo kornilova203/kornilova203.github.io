@@ -18,7 +18,7 @@ nav ul {
   }
 }
 
-@media screen and (max-width: 600px) and (orientation: landscape) {
+@media screen and (max-width: 800px) and (orientation: landscape) {
   .solarSistem {
     position: relative;
     top: -10px;
