@@ -3,13 +3,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100');*/
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600|Roboto:300&subset=cyrillic');
 
-p {
+p,figcaption {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 16px;
     opacity: 0.7;
 
 }
+
+
 
 html, body {
   height: 100%;
@@ -143,4 +145,16 @@ main img {
   .vertical {
     width: 100%;
   }
+}
+
+figure {
+  margin: 0px;
+}
+
+figure img {
+  padding-bottom: 0px;
+}
+
+figcaption {
+  padding-bottom: 30px;
 }
