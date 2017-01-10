@@ -1,4 +1,7 @@
 ﻿@media screen and (max-width: 540px) {
+  p, figcaption {
+    font-size: 12px;
+  }
   h1 {
     padding-top: 7px;
     font-size: 24px;
