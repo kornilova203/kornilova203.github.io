@@ -151,10 +151,11 @@ figure {
   margin: 0px;
 }
 
-figure img {
+/*figure img {
   padding-bottom: 0px;
-}
+}*/
 
 figcaption {
-  padding-bottom: 30px;
+  position: relative;
+  top: -20px;
 }
