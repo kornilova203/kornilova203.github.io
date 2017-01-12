@@ -1,0 +1,19 @@
+.social-icon img{
+  margin: 10px 10px;
+  opacity: .7;
+  width: 30px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+.social-icon p{
+  line-height: 50px;
+  vertical-align: middle;
+  display: inline;
+}
+
+.contacts {
+  text-align: left;
+  width: 330px;
+  margin: 0 auto;
+}
