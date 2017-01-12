@@ -65,7 +65,13 @@
   }
 
   .contacts {
-    width: 180px;
+    width: 230px;
+  }
+  .contacts p {
+    font-size: 16px;
+  }
+  .contacts h2{
+    text-align: center;
   }
 }
 
