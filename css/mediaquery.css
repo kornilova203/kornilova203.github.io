@@ -63,6 +63,10 @@
   footer {
     margin-top: 10px;
   }
+
+  .contacts {
+    width: 180px;
+  }
 }
 
 /*@media screen and (max-width: 800px) {
