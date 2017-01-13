@@ -1,4 +1,11 @@
-﻿@media screen and (max-width: 540px) {
+@media screen and (min-width: 1600px) {
+  main {
+    max-width: 1000px;
+  }
+}
+
+
+@media screen and (max-width: 540px) {
   p, figcaption {
     font-size: 12px;
   }
