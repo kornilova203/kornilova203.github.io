@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond&subset=cyrillic');
-@import url('https://fonts.googleapis.com/css?family=Roboto&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300&subset=cyrillic');
 
 body {
   background-color: #161616;
@@ -8,7 +8,7 @@ body {
 }
 
 h1, h2, nav a, .footer {
-  font-weight: normal;
+  font-weight: 300;
   font-family: 'Cormorant Garamond', serif;
 }
 
