@@ -9,9 +9,15 @@
   p, figcaption {
     font-size: 12px;
   }
+
+  main {
+    padding: 0 15px;
+  }
+
   h1 {
     padding-top: 7px;
-    font-size: 24px;
+    font-size: 20px;
+    margin-top: 0px;
   }
 
   h2 {
@@ -31,7 +37,7 @@
   }
 
   header {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 10%,rgba(0,0,0,0) 80%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 10%,rgba(0,0,0,0) 100%);
   }
 
   nav {
@@ -119,5 +125,14 @@
     height: 100%;
     width: auto;
   }
-
 }
+
+@media screen and (min-width: 1500px) {
+   main {
+     max-width: 1000px;
+   }
+
+   .img-container { /*for main pages*/
+     max-height: 528px;
+   }
+ }
