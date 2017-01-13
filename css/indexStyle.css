@@ -1,20 +1,17 @@
-@viewport {
-  width: device-width;
-}
-
- @font-face {
-     font-family: CormorantGaramond;
-     src: url(../font/CormorantGaramond-Light.ttf) format("opentype");
-     font-weight: lighter;
-}
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300');
 
 body {
   background-color: #000;
   text-align: center;
-  margin: 0px; /*убираем отступы от краев*/
+  margin: 0px;
   background-image: url('../img/bg.jpg');
   background-repeat: repeat;
   background-size: cover;
+}
+
+h1, a {
+  font-weight: normal;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 h1 {
@@ -32,6 +29,10 @@ nav {
   margin: 0;
   height: calc(50vh - 30vmin);
   padding: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 nav ul {
@@ -52,8 +53,6 @@ nav li {
 
 a {
   color: #ffffff;
-  font-family: CormorantGaramond, tahoma, sans-serif;
-  font-weight: lighter;
   text-decoration: none;
   transition-duration: 0.5s;
 }

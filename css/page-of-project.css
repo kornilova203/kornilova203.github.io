@@ -1,8 +1,3 @@
-/*@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
-@import url('https://fonts.googleapis.com/css?family=Roboto:100');*/
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600|Roboto:300&subset=cyrillic');
-
 p,figcaption {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -19,112 +14,12 @@ p a{
   text-decoration: underline;
 }
 
-html, body {
-  height: 100%;
-  max-height: 100%;
-}
-
-body {
-  background-color: #161616;
-  transition-property: background-color;
-	transition-duration: 2s;
-  margin: 0px; /*убираем отступы от краев*/
-  font-family: 'Cormorant Garamond', serif;
-  color: white;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
 header {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 10%,rgba(0,0,0,0) 100%);
-  transition-property: opacity;
-	transition-duration: 2s;
-  z-index: 100;
-  position: fixed;
-  width: 100%;
-  padding-bottom: 50px;
   top: 0px;
-  /*display: flex;
-  justify-content: center;*/
-}
-
-h1 {
-  text-align: center;
-  width: calc(100% - 100px);
-  margin: 0 auto;
-}
-
-nav {
-  font-size: 18px;
-  opacity: 1;
-}
-
-#nav-list {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: 600px;
-  margin: 15px auto;
-  padding: 0 15px;
-  text-align: center;
-  list-style-type: none;
-}
-
-nav li {
-  font-size: 18px;
-  display: inline;
 }
 
 main {
-  width: 100%;
-  max-width: 1060px;
-  margin: 0 auto;
-  padding: 0 15px;
-  margin-top: 130px;
-  box-sizing: border-box;
-}
-
-h2{
-  position: relative;
-  margin-bottom: 20px;
-  font-size: 30px;
-}
-
-a {
-  opacity: .8;
-  color: white;
-  text-decoration: none;
-  transition-duration: 0.5s;
-}
-
-a:hover { /* цвет при наведении */
-color: #ffbc00;
-}
-
-.footer {
-  height: 100px;
-  text-align: center;
-}
-
-.footer img{
-  margin: 20px 10px;
-  opacity: .7;
-  width: 30px;
-}
-
-.humburger-button {
-  display:none; /* Hide from browsers that don't support media queries */
-  cursor:pointer;
-	position:fixed;
-  z-index: 10;
-	top:0;
-	right:0;
-	background:url(../img/nav.png) no-repeat center center;
-	height:50px;
-	width:50px;
+  margin-top: 100px;
 }
 
 main img {
@@ -144,25 +39,20 @@ main img {
   float: right;
 }
 
-@media screen and (max-width: 540px) {
-  main{
-    margin-top: 70px;
-  }
-  .vertical {
-    width: 100%;
-  }
-
-}
-
 figure {
   margin: 0px;
 }
 
-/*figure img {
-  padding-bottom: 0px;
-}*/
-
 figcaption {
   position: relative;
   top: -20px;
+}
+
+@media screen and (max-width: 540px) {
+  main{
+    margin-top: 40px;
+  }
+  .vertical {
+    width: 100%;
+  }
 }
