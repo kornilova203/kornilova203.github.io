@@ -10,3 +10,9 @@ p, a {
 a {
   color: #ffbc00;
  }
+
+@media screen and (max-width: 600px) {
+  p, a {
+    font-size: 12px;
+  }
+}
