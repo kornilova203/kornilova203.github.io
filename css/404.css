@@ -5,11 +5,9 @@ body {
   display:flex;
   height: 100vh;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   background-color: #000;
   text-align: center;
-  margin: 0px;
   background-image: url('../img/bg.jpg');
   background-repeat: repeat;
   background-size: cover;
@@ -19,6 +17,7 @@ body {
 h1 {
   font-weight: 300;
   font-family: 'Cormorant Garamond', serif;
+  font-size: 150%;
 }
 
 p, a {
