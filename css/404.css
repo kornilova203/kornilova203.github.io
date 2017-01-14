@@ -19,6 +19,7 @@ h1 {
   font-weight: 300;
   font-family: 'Cormorant Garamond', serif;
   font-size: 150%;
+  width: 100%;
 }
 
 p, a {
