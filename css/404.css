@@ -7,11 +7,8 @@ body {
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-  background-color: #000;
+  background-color: #161616;
   text-align: center;
-  background-image: url('../img/bg.jpg');
-  background-repeat: repeat;
-  background-size: cover;
   color: white;
 } 
 
@@ -26,11 +23,11 @@ p, a {
   font-weight: 300;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  line-height: 1.5;
 }
 
 a {
   color: #ffbc00;
-  text-decoration: none;
  }
 
 @media screen and (max-width: 600px) {
