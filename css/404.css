@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300&subset=cyrillic');
 
 body {
   display:flex;
@@ -6,11 +7,22 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  background-color: #000;
+  text-align: center;
+  margin: 0px;
+  background-image: url('../img/bg.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  color: white;
 } 
+
+h1 {
+  font-weight: 300;
+  font-family: 'Cormorant Garamond', serif;
+}
 
 p, a {
   width: 100%;
-  color: white;
   font-weight: 300;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -18,6 +30,7 @@ p, a {
 
 a {
   color: #ffbc00;
+  text-decoration: none;
  }
 
 @media screen and (max-width: 600px) {
