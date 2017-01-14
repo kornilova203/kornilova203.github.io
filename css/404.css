@@ -3,7 +3,7 @@
 
 body {
   display:flex;
-  height: 100vh;
+  height: 80vh;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
