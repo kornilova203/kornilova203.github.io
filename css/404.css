@@ -5,7 +5,8 @@ body {
   display:flex;
   height: 100vh;
   flex-wrap: wrap;
-  align-items: center;
+  align-content: center;
+  justify-content: center;
   background-color: #000;
   text-align: center;
   background-image: url('../img/bg.jpg');
