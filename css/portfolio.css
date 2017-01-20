@@ -15,15 +15,28 @@ section {
   overflow: hidden;
 }
 
-section img {
-  position: relative;
-  flex-shrink: 0;
-}
-
 section footer {
   text-align: right;
-  font-size: 18px;
+  font-size: 14px;
   margin-top: 15px;
   font-weight: 300;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+section img, .white {
+  position: relative;
+  flex-shrink: 0;
+  transition: filter 0.5s;
+}
+
+section img:hover {
+  filter: brightness(110%);
+}
+
+@supports (object-fit: cover) {
+  section img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 }
