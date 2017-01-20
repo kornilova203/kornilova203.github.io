@@ -1,11 +1,4 @@
-@media screen and (min-width: 1600px) {
-  main {
-    max-width: 1000px;
-  }
-}
-
-
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 740px) {
   p, figcaption {
     font-size: 12px;
   }
@@ -48,26 +41,22 @@
     z-index: 200;
   }
 
-  /*header {
-    position: relative;
-    top: -15px;
-  }*/
+  #nav-list {
+    display: none;
+    flex-wrap: wrap;
+  }
 
-#nav-list {
-  display: none;
-  flex-wrap: wrap;
-}
-
- nav li {
-  flex-basis: 100%;
-  display: block;
-}
+  nav li {
+    flex-basis: 100%;
+    display: block;
+  }
 
   nav a {
     display: block;
     padding:10px;
     font-style: 120%;
   }
+
   .nav-active {
     display:block;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
@@ -80,29 +69,15 @@
   .contacts {
     width: 230px;
   }
+
   .contacts p {
     font-size: 16px;
   }
+
   .contacts h2{
     text-align: center;
   }
 }
-
-/*@media screen and (max-width: 800px) {
-   #pagewrap {
-      width: 90%;
-   }
-   main {
-     position: relative;
-     width: 100%;
-     float: none;
-   }
-   nav {
-     margin-top: auto;
-     position: relative;
-     float: none;
-   }
-}*/
 
 @media all and (orientation: landscape){
   section img {
@@ -110,20 +85,34 @@
     height: auto;
   }
 
+  @supports (object-fit: cover) {
+    section img {
+      height: 100%;
+    }
+  }
 }
-@media all and (orientation: landscape) and (max-width: 540px) {
+
+@media all and (orientation: landscape) and (max-width: 740px) {
   .img-container {
     height: 50vh;
-    width: 80%;
     margin: 0 auto;
   }
-
+  main {
+      width: 60%;
+  }
 }
+
 
 @media all and (orientation: portrait){
   section img {
     height: 100%;
     width: auto;
+  }
+
+  @supports (object-fit: cover) {
+    section img {
+      width: 100%;
+    }
   }
 }
 

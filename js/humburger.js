@@ -22,7 +22,7 @@ function hideNavUl () {
 
 window.addEventListener("resize", checkSize);
 function checkSize() {
-  if (window.innerWidth > 540)
+  if (window.innerWidth > 740)
     showNavUl();
   else
     hideNavUl();
