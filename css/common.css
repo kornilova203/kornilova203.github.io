@@ -91,3 +91,7 @@ a {
 a:hover { /* цвет при наведении */
 color: #ffbc00;
 }
+
+.current-link { /* цвет при наведении */
+color: #ffbc00;
+}
