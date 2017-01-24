@@ -9,6 +9,13 @@ body {
   background-size: cover;
 }
 
+.info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+}
+
 h1, a {
   font-weight: 300;
   font-family: 'Cormorant Garamond', serif;
@@ -70,10 +77,7 @@ color: #ffbc00;
 }
 
 .planet {
-  width: 20%;
-  height: auto;
-  opacity: 0;
-  animation: turnOnPlanet 3s linear 1;
+    position: fixed;
 }
 
 .path1 {
