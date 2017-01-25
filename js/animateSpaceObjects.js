@@ -8,7 +8,7 @@ var planet;
 var sun;
 var m = 1; // planet's mass
 var M = 1000000; // sun's mass
-var G = 1;
+var G = 10;
 var t0,dt;
 var vh;
 var vw;
@@ -31,14 +31,14 @@ function init() {
 	// 	star.draw(context_bg);
 	// }
 	// create a stationary sun
-	sun = new Ball(imgs[0], 170, M);
+	sun = new Ball(imgs[0], 200, M);
 	sun.pos2D = new Vector2D(vw/2,vh/2);
 	sun.draw(context_bg);
 	// create a moving planet
-	planet = new Ball(imgs[1], 100, m);
-	planet.pos2D = new Vector2D(vw/2,vh/2-250);
+	planet = new Ball(imgs[1], 70, m);
+	planet.pos2D = new Vector2D(vw/2,vh/2-150);
   // var r = planet.pos2D.subtract(sun.pos2D).lenght();
-  var v = Math.sqrt(G*M*m/250); //velocity for circular orbit
+  var v = Math.sqrt(G*M*m/150); //velocity for circular orbit
 	planet.velo2D = new Vector2D(v, 0);
 	//planet.velo2D = new Vector2D(70,-40);
 	//planet.velo2D = new Vector2D(85,-40);

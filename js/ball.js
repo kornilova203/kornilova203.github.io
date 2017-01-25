@@ -9,6 +9,7 @@ function Ball(img, radius, mass){
 	this.vx = 0;
 	this.vy = 0;
 	this.img = img;
+	// this.img.style.width = 10 + 'px';
 	// image = new Image();
 
 	// image.onload = function() {
@@ -33,6 +34,6 @@ Ball.prototype = {
 		this.vy = velo.y;
 	},
 	draw: function (context) {
-		context.drawImage(this.img, this.x-this.radius, this.y-this.radius);
+		context.drawImage(this.img, this.x-this.radius/2, this.y-this.radius/2, this.radius,this.radius);
 	}
 };
