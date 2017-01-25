@@ -38,7 +38,8 @@ function init() {
 	planet = new Ball(imgs[1], 70, m);
 	planet.pos2D = new Vector2D(vw/2,vh/2-150);
   // var r = planet.pos2D.subtract(sun.pos2D).lenght();
-  var v = Math.sqrt(G*M*m/150); //velocity for circular orbit
+  var v = 220; //velocity for circular orbit
+  // var v = Math.sqrt(G*M*m/150); //velocity for circular orbit
 	planet.velo2D = new Vector2D(v, 0);
 	//planet.velo2D = new Vector2D(70,-40);
 	//planet.velo2D = new Vector2D(85,-40);
