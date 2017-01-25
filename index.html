@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="css/indexMediaquery.css">
 </head>
 <body>
-<img class="planet" src="img/space/sun-on.png"  />
-<img class="planet" src="img/space/planet3.png" />
+<img class="planet" style='display: none;' src="img/space/sun-on.png"  />
+<img class="planet" style='display: none;' src="img/space/planet3.png" />
+<canvas id="canvas_bg" style='position: absolute; left: 0;' width="850" height="600"></canvas>
+<canvas id="canvas" style='position: absolute; left: 0;' width="850" height="600"></canvas>
 <!-- <img class="planet" src="img/space/planet2.png" /> -->
 <!-- <img class="planet" src="img/space/planet1.png" /> -->
 <h1><a href="">Людмила Корнилова</a></h1>
@@ -28,6 +30,9 @@
   </ul>
 </nav>
 <link rel="stylesheet" href="css/animation.css">
+<script src= "js/vector2D.js"></script>
+<script src= "js/forces.js"></script>
+<script src= "js/ball.js"></script>
 <script src="js/animateSpaceObjects.js"></script>
 <script src="js/google-analytics.js"></script>
 </body>
