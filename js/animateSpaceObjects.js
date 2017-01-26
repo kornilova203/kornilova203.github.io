@@ -77,7 +77,6 @@ function movePlanets(){
   }
   if (Math.abs(planet.x - window.innerWidth/2) < 30 &&
       Math.abs(planet.y - window.innerHeight/2) < 30) {
-    alert("planet was destroied");
     planet.canvas.style = "display: none";
     planets.splice (i, i);
 
