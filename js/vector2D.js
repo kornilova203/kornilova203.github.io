@@ -33,6 +33,11 @@ Vector2D.prototype = {
 		this.x += vec.x;
 		this.y += vec.y;
 	},
+	incrementByScaled: function(vec,k) {
+		this.x += vec.x*k;
+		this.y += vec.y*k;
+		return new Vector2D(this.x,this.y);
+	},
 	subtract: function(vec) {
 		return new Vector2D(this.x - vec.x,this.y - vec.y);
 	},

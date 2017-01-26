@@ -7,13 +7,18 @@
   <link rel="stylesheet" href="css/indexStyle.css">
   <link rel="stylesheet" href="css/indexMediaquery.css">
 </head>
-<body>
-<img class="planet" style='display: none;' src="img/space/sun-on.png"  />
-<img class="planet" style='display: none;' src="img/space/planet3.png" />
-<canvas id="canvas_bg" style='position: absolute; left: 0;' width="850" height="600"></canvas>
-<canvas id="canvas" style='position: absolute; left: 0;' width="850" height="600"></canvas>
-<!-- <img class="planet" src="img/space/planet2.png" /> -->
-<!-- <img class="planet" src="img/space/planet1.png" /> -->
+<body onload="init()" onmousedown="startClick(event);" onmouseup="endClick(event);">
+
+<img id="sunImg" style='display: none;' src="img/space/sun-on.png"  />
+<img class="planetImg" style='display: none;' src="img/space/planet3.png" />
+<img class="planetImg" style='display: none;' src="img/space/planet2.png" />
+<img class="planetImg" style='display: none;' src="img/space/planet2.png" />
+<!-- <img class="planetImg" style='display: none;' src="img/space/planet1.png" /> -->
+<canvas class="planetCanvas" style='position: absolute; left: 0;' width="850" height="600"></canvas>
+<canvas class="planetCanvas" style='position: absolute; left: 0;' width="850" height="600"></canvas>
+<canvas class="planetCanvas" style='position: absolute; left: 0;' width="850" height="600"></canvas>
+<canvas id="sunCanvas" style='position: absolute; left: 0;' width="850" height="600"></canvas>
+
 <h1><a href="">Людмила Корнилова</a></h1>
 <p class="info"></p>
 <div class="solarSistem">
@@ -31,7 +36,7 @@
 </nav>
 <link rel="stylesheet" href="css/animation.css">
 <script src= "js/vector2D.js"></script>
-<script src= "js/forces.js"></script>
+<!-- <script src= "js/forces.js"></script> -->
 <script src= "js/ball.js"></script>
 <script src="js/animateSpaceObjects.js"></script>
 <script src="js/google-analytics.js"></script>

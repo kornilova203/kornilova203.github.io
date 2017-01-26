@@ -1,5 +1,5 @@
 // dependencies: Vector2D
-function Ball(img, radius, mass){
+function Ball(canvas, img, radius, mass){
 	if(typeof(radius)==='undefined') radius = 20;
 	if(typeof(mass)==='undefined') mass = 1;
 	this.radius = radius;
@@ -9,6 +9,10 @@ function Ball(img, radius, mass){
 	this.vx = 0;
 	this.vy = 0;
 	this.img = img;
+	this.canvas = canvas;
+	this.context = canvas.getContext('2d');
+	this.context.canvas.width  = window.innerWidth;
+  this.context.canvas.height = window.innerHeight;
 	// this.img.style.width = 10 + 'px';
 	// image = new Image();
 
@@ -33,7 +37,11 @@ Ball.prototype = {
 		this.vx = velo.x;
 		this.vy = velo.y;
 	},
-	draw: function (context) {
-		context.drawImage(this.img, this.x-this.radius/2, this.y-this.radius/2, this.radius,this.radius);
+	draw: function () {
+		this.context.drawImage(this.img, this.x-this.radius/2, this.y-this.radius/2, this.radius,this.radius);
+	},
+	changeCanvasSize: function () {
+		this.context.canvas.width  = window.innerWidth;
+	  this.context.canvas.height = window.innerHeight;
 	}
 };
