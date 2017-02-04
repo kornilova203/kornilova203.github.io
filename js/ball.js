@@ -3,12 +3,16 @@ function Ball(img, radius, mass){
 	if(typeof(radius)==='undefined') radius = 20;
 	if(typeof(mass)==='undefined') mass = 1;
 	this.radius = radius;
+	this.sizeCoef;
+	this.changeSizeCoef();
 	this.mass = mass;
 	this.x = 0;
 	this.y = 0;
+
 	this.vx = 0;
 	this.vy = 0;
 	this.img = img;
+
 	this.canvas = document.createElement('canvas');
 	this.canvas.style = "position: absolute; left: 0; top: 0; pointer-events: none; display:block;"
   document.getElementsByTagName('body')[0].appendChild(this.canvas);
@@ -40,11 +44,27 @@ Ball.prototype = {
 		this.vy = velo.y;
 	},
 	draw: function () {
-		this.context.drawImage(this.img, this.x-this.radius/2, this.y-this.radius/2, this.radius,this.radius);
+		// var radius = this.radius;
+		var radius = this.radius*this.sizeCoef;
+		var x = this.x*this.sizeCoef;
+		var y = this.y*this.sizeCoef;
+		this.context.drawImage(this.img, window.innerWidth/2 + x - radius/2,
+														window.innerHeight/2 + y - radius/2,
+														radius,
+														radius);
 	},
 	changeCanvasSize: function () {
 		this.context.canvas.width  = window.innerWidth;
 	  this.context.canvas.height = window.innerHeight;
+	},
+	changeSizeCoef: function() {
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+		if (w > h)
+			this.sizeCoef = h*0.002;
+		else
+			this.sizeCoef = w*0.002;
+
 	},
 	// changeCanvasMargin: function() {
 	// 	var difw = window.innerWidth - this.context.canvas.width
@@ -52,7 +72,7 @@ Ball.prototype = {
 	rotate: function(deg) {
 		this.velo2D = this.velo2D.rotate(deg, new Vector2D(0, 0))
 		// addInfo("window.innerHeight / 2: " + window.innerHeight / 2 + " window.innerWidth / 2 " + window.innerWidth / 2);
-		this.pos2D = this.pos2D.rotate(deg,new Vector2D(window.innerWidth / 2,window.innerHeight / 2))
+		this.pos2D = this.pos2D.rotate(deg,new Vector2D(0, 0))
 	},
 	clone: function() {
 		ball = new Ball(planetsImgs[0], this.radius, m);

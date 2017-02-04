@@ -3,56 +3,34 @@ var planetsImgs = document.getElementsByClassName('planetImg'); //array of plane
 
 var planets = [];
 var secondGroupOfPlanets = [];
-var arrLength = 5;
+var amountOfPlanets = 5;
 var sun;
 var m = 1; // planet's mass
 var M = 1000000; // sun's mass
-var G = 3;
+var G = 1;
 var t0,dt;
-var vh;
-var vw;
-var body;
+var body = document.getElementsByTagName("body")[0];
+var vh = window.innerHeight;
+var vw = window.innerWidth;
 
-body = document.getElementsByTagName("body")[0];
-vh = window.innerHeight;
-vw = window.innerWidth;
-
-var info = document.getElementById("info");
-
-function addInfo(string) {
-  info.innerHTML = info.innerHTML + string + "<br>";
-}
+// var info = document.getElementById("info");
+//
+// function addInfo(string) {
+//   info.innerHTML = info.innerHTML + string + "<br>";
+// }
 
 // addInfo("hello")
+var distanceToSun = 150;
 
-if (vh < vw) {// horizontal
-  var distanceToSun = 150*vh/600;
-  // var sizeCoef = 1*vw/450;
-}
-else { // vertical
-  distanceToSun = vw/2*0.73;
-  // sizeCoef = 1*vw/450;
-}
 // addInfo("distance to sun: " + distanceToSun)
 // addInfo("vh/2: " + vh/2 + " vw/2 " + vw/2);
 
-if (vw < 800) {
-  var sizeCoef = 1*vw/450;
-  if (vw > vh) { // horizontal
-    sizeCoef *= 0.5;
-    // g = 1;
-  }
-}
-else {
-  sizeCoef = 0.8;
-  g = 2;
-}
-
+// Create array of planets
 function createPlanets(amount, distance) {
   angle = 360/amount;
   var newArr = [];
-  newArr.push(new Ball (planetsImgs[0], 50*sizeCoef, m))
-  newArr[0].pos2D = new Vector2D(vw/2,vh/2-distance);
+  newArr.push(new Ball (planetsImgs[0], 30, m))
+  newArr[0].pos2D = new Vector2D(0,-distance);
   var v = Math.sqrt(G*M*m/distance)*0.8; //velocity for circular orbit
   newArr[0].velo2D = new Vector2D(v, 0);
   for (var i = 1; i < amount; i++) {
@@ -69,14 +47,14 @@ function createPlanets(amount, distance) {
 
 function init() {
 	// create a stationary sun
-	sun = new Ball(sunImg, 200*sizeCoef, M);
-	sun.pos2D = new Vector2D(vw/2,vh/2);
+	sun = new Ball(sunImg, 100, M);
+	sun.pos2D = new Vector2D(0, 0);
 	sun.draw();
-  planets = planets.concat(createPlanets(arrLength, distanceToSun));
-  planets.push.apply(planets, createPlanets(arrLength, distanceToSun-50)); // start new group of planets
-  // for (var i = 0; i < arrLength; i++) {
-  //   planets[i].draw();
-  // }
+  planets = createPlanets(amountOfPlanets, distanceToSun);
+  planets.push.apply(planets, createPlanets(amountOfPlanets, distanceToSun-50)); // start new group of planets
+  for (var i = 0; i < planets.length; i++) {
+    planets[i].draw();
+  }
 	t0 = new Date().getTime();
 	animFrame();
 };
@@ -85,6 +63,7 @@ function animFrame(){
 	animId = requestAnimationFrame(animFrame);
 	onTimer();
 }
+
 function onTimer(){
 	var t1 = new Date().getTime();
 	dt = 0.001*(t1-t0);
@@ -95,14 +74,13 @@ function onTimer(){
   }
 	move();
 }
+
 function move(){
 	movePlanets();
-	// calcForce();
 	updateVeloOfPlanets();
-	// updateVelo(planets[0]);
 }
 
-function movePlanets(){
+function movePlanets() {
   for (var i = 0; i < planets.length; i++) {
     var planet = planets[i];
 	  planet.pos2D = planet.pos2D.addScaled(planet.velo2D,dt);
@@ -157,19 +135,20 @@ function updateVeloOfPlanets(){
 	// obj.velo2D = obj.velo2D.addScaled(acc,dt);
 // }
 
-// window.onresize = function() {
-//   sun.changeCanvasSize();
-//   for (var i = 0; i < planets.length; i++) {
-//     planets[i].changeCanvasSize();
-//   }
-// };
 
 window.onresize = function() {
-  addInfo("resize!");
+  // addInfo("resize!");
+  sun.context.clearRect(0, 0, sun.canvas.width, sun.canvas.height);
+  sun.changeCanvasSize();
+  sun.draw();
+  sun.changeSizeCoef();
+
   // count difference between width of canvas and width of viewport
   // devide it by 2. And addign it to margin
-  // for (var i = 0; i < planets.length)
-  //   planets[1].changeCanvasMargin();
+  for (var i = 0; i < planets.length; i++) {
+    planets[i].changeCanvasSize();
+    planets[i].changeSizeCoef();
+  }
 }
 
 function startClick(e) {
