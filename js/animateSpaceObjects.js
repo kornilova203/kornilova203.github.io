@@ -76,8 +76,8 @@ function init() {
 	sun = new Ball(sunImg, 200*sizeCoef, M);
 	sun.pos2D = new Vector2D(vw/2,vh/2);
 	sun.draw();
-  planets = createPlanets(5);
-  secondGroupOfPlanets = createPlanets(5);
+  planets = createPlanets(8);
+  secondGroupOfPlanets = createPlanets(8);
   for (i in planets) {
     // planets[i].rotate(15);
   }
