@@ -4,10 +4,10 @@ nav ul {
   flex-direction: column;
   justify-content: center;
 }
-  nav {
+  /*nav {
     position: relative;
     top: -40px;
-  }
+  }*/
 
   nav li {
     margin: 5px;
@@ -24,10 +24,10 @@ nav ul {
     position: relative;
     top: -10px;
   }
-  nav {
+  /*nav {
     position: relative;
     top: -30px;
-  }
+  }*/
 }
 
 

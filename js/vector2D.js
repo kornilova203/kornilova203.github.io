@@ -57,7 +57,21 @@ Vector2D.prototype = {
 	},
 	dotProduct:	function(vec) {
 		return this.x*vec.x + this.y*vec.y;
-	}
+	},
+	rotate: function(deg, center) {
+		rad = deg * (Math.PI / 180);
+		// addInfo(deg.toString() + " - " + rad.toString());
+		// addInfo("position: " + this.x.toString() + " - " + this.y.toString() + " center: " + center.x.toString() + " - " + center.y.toString());
+		// addInfo("sin: " + Math.sin(rad) + " cos: " + Math.cos(rad));
+		var x = center.x + (this.x - center.x) * Math.cos(rad) - (this.y - center.y) * Math.sin(rad);
+		// addInfo("(this.y - center.y) " + (this.y - center.y) );
+		// addInfo("(this.x - center.x) * Math.sin(rad): " + (this.x - center.x) * Math.sin(rad) );
+		// addInfo("(this.x - center.x) * Math.sin(rad) + center.y: " + (center.y + (this.x - center.x) * Math.sin(rad)).toString() );
+		// addInfo("full: " + (center.y + (this.y - center.y) * Math.cos(rad) + (this.x - center.x) * Math.sin(rad)).toString() );
+		var y = center.y + (this.y - center.y) * Math.cos(rad) + (this.x - center.x) * Math.sin(rad);
+		// addInfo("new position: " + x + " - " + y );
+		return new Vector2D(x, y)
+;	}
 };
 
 // STATIC METHODS

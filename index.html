@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, height=device-height">
   <title>Людмила Корнилова</title>
   <link rel="stylesheet" href="css/indexStyle.css">
   <link rel="stylesheet" href="css/indexMediaquery.css">
@@ -10,22 +10,18 @@
 <body onload="init()" onmousedown="startClick(event);" onmouseup="endClick(event);">
 
 <img id="sunImg" style='display: none;' src="img/space/sun-on.png"  />
-<img class="planetImg" style='display: none;' src="img/space/planet3.png" />
+<!-- <img class="planetImg" style='display: none;' src="img/space/planet3.png" /> -->
 <img class="planetImg" style='display: none;' src="img/space/planet2.png" />
-<img class="planetImg" style='display: none;' src="img/space/planet2.png" />
+<!-- <img class="planetImg" style='display: none;' src="img/space/planet2.png" /> -->
+<!-- <img class="planetImg" style='display: none;' src="img/space/planet2.png" /> -->
 <!-- <img class="planetImg" style='display: none;' src="img/space/planet1.png" /> -->
-<canvas class="planetCanvas" style='position: absolute; left: 0;' width="850" height="600"></canvas>
-<canvas class="planetCanvas" style='position: absolute; left: 0;' width="850" height="600"></canvas>
-<canvas class="planetCanvas" style='position: absolute; left: 0;' width="850" height="600"></canvas>
-<canvas id="sunCanvas" style='position: absolute; left: 0;' width="850" height="600"></canvas>
-
-<h1><a href="">Людмила Корнилова</a></h1>
-<p class="info"></p>
-<div class="solarSistem">
+<h1><a href="contacts.html">Людмила Корнилова</a></h1>
+<p id="info" style="color: white;"></p>
+<!-- <div class="solarSistem"> -->
   <!-- <ul class="planets"> -->
   <!-- </ul> -->
   <!-- <img class="sun" id="sunOff" src="img/space/sun-off.png"  /> -->
-</div>
+<!-- </div> -->
 <nav>
   <ul>
     <li><a href="illustration.html">Иллюстрации</a></li>
@@ -34,11 +30,18 @@
     <li><a href="contacts.html">Контакты</a></li>
   </ul>
 </nav>
+<canvas class="planetCanvas"></canvas>
+<canvas class="planetCanvas"></canvas>
+<canvas class="planetCanvas"></canvas>
+<canvas class="planetCanvas"></canvas>
+<canvas id="sunCanvas"></canvas>
 <link rel="stylesheet" href="css/animation.css">
 <script src= "js/vector2D.js"></script>
 <!-- <script src= "js/forces.js"></script> -->
 <script src= "js/ball.js"></script>
 <script src="js/animateSpaceObjects.js"></script>
 <script src="js/google-analytics.js"></script>
+
+
 </body>
 </html>

@@ -7,6 +7,14 @@ body {
   background-image: url('../img/bg.jpg');
   background-repeat: repeat;
   background-size: cover;
+  min-height: 100vh;
+}
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
 }
 
 .info {
@@ -22,6 +30,7 @@ h1, a {
 }
 
 h1 {
+  /*pointer-events: none;*/
   margin: 0;
   height: calc(50vh - 31vmin);
   line-height: calc(50vh - 31vmin);
@@ -36,6 +45,9 @@ nav {
   margin: 0;
   height: calc(50vh - 30vmin);
   padding: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 li {
