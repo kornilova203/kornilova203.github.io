@@ -10,7 +10,7 @@ function Ball(img, radius, mass){
 	this.vy = 0;
 	this.img = img;
 	this.canvas = document.createElement('canvas');
-	this.canvas.style = "position: absolute; left: 0; top: 0; pointer-events: none;"
+	this.canvas.style = "position: absolute; left: 0; top: 0; pointer-events: none; display:block;"
   document.getElementsByTagName('body')[0].appendChild(this.canvas);
 	this.context = this.canvas.getContext('2d');
 	this.context.canvas.width  = window.innerWidth;
@@ -46,13 +46,16 @@ Ball.prototype = {
 		this.context.canvas.width  = window.innerWidth;
 	  this.context.canvas.height = window.innerHeight;
 	},
+	// changeCanvasMargin: function() {
+	// 	var difw = window.innerWidth - this.context.canvas.width
+	// },
 	rotate: function(deg) {
 		this.velo2D = this.velo2D.rotate(deg, new Vector2D(0, 0))
 		// addInfo("window.innerHeight / 2: " + window.innerHeight / 2 + " window.innerWidth / 2 " + window.innerWidth / 2);
 		this.pos2D = this.pos2D.rotate(deg,new Vector2D(window.innerWidth / 2,window.innerHeight / 2))
 	},
 	clone: function() {
-		ball = new Ball(planetsImgs[0], 40*sizeCoef, m);
+		ball = new Ball(planetsImgs[0], this.radius, m);
 		ball.pos2D = this.pos2D;
 		ball.velo2D = this.velo2D;
 		return ball;
