@@ -3,7 +3,7 @@ var planetsImgs = document.getElementsByClassName('planetImg'); //array of plane
 
 var planets = [];
 var secondGroupOfPlanets = [];
-var amountOfPlanets = 5;
+var amountOfPlanets = 3;
 var sun;
 var m = 1; // planet's mass
 var M = 1000000; // sun's mass
@@ -13,11 +13,11 @@ var body = document.getElementsByTagName("body")[0];
 var vh = window.innerHeight;
 var vw = window.innerWidth;
 
-// var info = document.getElementById("info");
+var info = document.getElementById("info");
 //
-// function addInfo(string) {
-//   info.innerHTML = info.innerHTML + string + "<br>";
-// }
+function addInfo(string) {
+  info.innerHTML = info.innerHTML + string + "<br>";
+}
 
 // addInfo("hello")
 var distanceToSun = 150;
@@ -31,7 +31,7 @@ function createPlanets(amount, distance) {
   var newArr = [];
   newArr.push(new Ball (planetsImgs[0], 30, m))
   newArr[0].pos2D = new Vector2D(0,-distance);
-  var v = Math.sqrt(G*M*m/distance)*0.8; //velocity for circular orbit
+  var v = Math.sqrt(G*M*m/distance)*0.75; //velocity for circular orbit
   newArr[0].velo2D = new Vector2D(v, 0);
   for (var i = 1; i < amount; i++) {
     newArr.push(newArr[i-1].clone());
@@ -51,6 +51,8 @@ function init() {
 	sun.pos2D = new Vector2D(0, 0);
 	sun.draw();
   planets = createPlanets(amountOfPlanets, distanceToSun);
+  for (var i = 0; i<planets.length; i++)
+    planets[i].rotate(10);
   planets.push.apply(planets, createPlanets(amountOfPlanets, distanceToSun-50)); // start new group of planets
   for (var i = 0; i < planets.length; i++) {
     planets[i].draw();
@@ -68,7 +70,7 @@ function onTimer(){
 	var t1 = new Date().getTime();
 	dt = 0.001*(t1-t0);
 	t0 = t1;
-	if (dt>0.1) {
+	if (dt>0.2) {
     dt = 0;
     // addInfo("yo!")
   }
