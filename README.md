@@ -26,7 +26,7 @@ https://kornilova-l.github.io
 Для подсчета силы гравитации используется известная всем со школы формула:
 ![формула всемирного тяготения](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/NewtonsLawOfUniversalGravitation.svg/400px-NewtonsLawOfUniversalGravitation.svg.png)
 
-
+Получается, всё, что нужно делать, это постоянно считать ускорение для планет, обновлять вектор скорости, а затем считать новые координаты
 
 
 
