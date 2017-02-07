@@ -7,6 +7,23 @@ body {
   background-image: url('../img/bg.jpg');
   background-repeat: repeat;
   background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
 }
 
 h1, a {
@@ -15,6 +32,7 @@ h1, a {
 }
 
 h1 {
+  /*pointer-events: none;*/
   margin: 0;
   height: calc(50vh - 31vmin);
   line-height: calc(50vh - 31vmin);
@@ -29,6 +47,9 @@ nav {
   margin: 0;
   height: calc(50vh - 30vmin);
   padding: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 li {
@@ -70,10 +91,7 @@ color: #ffbc00;
 }
 
 .planet {
-  width: 20%;
-  height: auto;
-  opacity: 0;
-  animation: turnOnPlanet 3s linear 1;
+    position: absolute;
 }
 
 .path1 {
