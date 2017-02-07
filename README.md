@@ -30,6 +30,7 @@ https://kornilova-l.github.io
 
 ## Подробнее о JavaScript коде
 Основой код [animateSpaceObjects.js](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/animateSpaceObjects.js)
+
 Для анимации используется requestAnimationFrame. Так как JS не может гарантировать, что код будет исполняться через фиксированные промежутки времени, для анимации используется таймер, который замеряет dt, этот промежуток времени затем будет использоваться при обновлении вектора скорости и координат.
 
 
