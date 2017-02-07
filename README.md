@@ -18,4 +18,6 @@ https://kornilova-l.github.io
 ## Как работает гравитация?
 Для подсчета силы гравитации используется известная всем со школы формула:
 ![формула всемирного тяготения](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/NewtonsLawOfUniversalGravitation.svg/400px-NewtonsLawOfUniversalGravitation.svg.png)
+На самом деле считать саму силу гравитации и не нужно. Надо только считать ускорение, так как для вычисления нового вектора скорости нужно именно ускорение, а оно не зависит от массы объекта
+![формула ускорения](http://xreferat.com/image/102/1307331722_1.gif)
 
