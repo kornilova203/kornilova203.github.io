@@ -17,6 +17,10 @@ nav ul {
     position: relative;
     top: -40px;
   }
+
+  canvas {
+    margin-top: -20px;
+  }
 }
 
 @media screen and (max-width: 800px) and (orientation: landscape) {
