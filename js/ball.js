@@ -1,7 +1,5 @@
 // dependencies: Vector2D
 function Ball(img, radius, mass){
-	if(typeof(radius)==='undefined') radius = 20;
-	if(typeof(mass)==='undefined') mass = 1;
 	this.radius = radius;
 	this.sizeCoef;
 	this.changeSizeCoef();
@@ -19,13 +17,6 @@ function Ball(img, radius, mass){
 	this.context = this.canvas.getContext('2d');
 	this.context.canvas.width  = window.innerWidth;
   this.context.canvas.height = window.innerHeight;
-	// this.img.style.width = 10 + 'px';
-	// image = new Image();
-
-	// image.onload = function() {
-		// context.drawImage(image, 69, 50);
-	// };
-	// image.src = 'img/space/sun-on.png';
 }
 
 Ball.prototype = {
@@ -44,7 +35,6 @@ Ball.prototype = {
 		this.vy = velo.y;
 	},
 	draw: function () {
-		// var radius = this.radius;
 		var radius = this.radius*this.sizeCoef;
 		var x = this.x*this.sizeCoef;
 		var y = this.y*this.sizeCoef;
@@ -66,12 +56,8 @@ Ball.prototype = {
 			this.sizeCoef = w*0.002;
 
 	},
-	// changeCanvasMargin: function() {
-	// 	var difw = window.innerWidth - this.context.canvas.width
-	// },
 	rotate: function(deg) {
 		this.velo2D = this.velo2D.rotate(deg, new Vector2D(0, 0))
-		// addInfo("window.innerHeight / 2: " + window.innerHeight / 2 + " window.innerWidth / 2 " + window.innerWidth / 2);
 		this.pos2D = this.pos2D.rotate(deg,new Vector2D(0, 0))
 	},
 	clone: function() {
