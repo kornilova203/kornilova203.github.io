@@ -75,9 +75,13 @@ Ball.prototype = {
 		this.pos2D = this.pos2D.rotate(deg,new Vector2D(0, 0))
 	},
 	clone: function() {
-		ball = new Ball(planetsImgs[0], this.radius, m);
+		ball = new Ball(planetImg, this.radius, m);
 		ball.pos2D = this.pos2D;
 		ball.velo2D = this.velo2D;
 		return ball;
+	},
+	destroyBySun: function(i) {
+	  this.canvas.style = "display: none";
+	  planets.splice (i, i);
 	}
 };
