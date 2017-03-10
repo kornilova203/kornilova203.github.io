@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Формула Байеса. Людмила Корнилова</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Формула Байеса</h1>
+  <img src="img/formula.png" alt="Формула Байеса"/>
+  <p><b>P(A)</b> — априорная вероятность гипотезы A</p>
+  <p><b>P(A | B)</b> — вероятность гипотезы A при наступлении события B (апостериорная вероятность)</p>
+  <p><b>P(B | A)</b> — вероятность наступления события B при истинности гипотезы A</p>
+  <p><b>P(B)</b> — полная вероятность наступления события B</p>
+  <script defer async>
+  function countFormula(event) {
+    ifCount = confirm("Хотите посчитать формулу?")
+    const values = {
+      'A': 2,
+      'B': 2,
+      'B | A': 2
+    };
+    if (ifCount) {
+      for (var value in values) {
+        if (values.hasOwnProperty(value)) {
+          while (values[value] > 1 || values[value] < 0) {
+            values[value] = prompt("P( " + value + " )", 1)
+            if (values[value] > 1 || values[value] < 0)
+              alert("Вероятность должна быть больше 0 и меньше 1. Введите значение заново");
+          }
+        }
+      }
+      alert("Результат: " + (values['B | A'] * values['A'] / values['B']).toFixed(2));
+    }
+  }
+
+  window.addEventListener("load", function(){
+    setTimeout(countFormula, 500);
+  })
+  </script>
+</body>
+</html>
