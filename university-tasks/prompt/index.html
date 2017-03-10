@@ -13,19 +13,24 @@
   <p><b>P(B | A)</b> — вероятность наступления события B при истинности гипотезы A</p>
   <p><b>P(B)</b> — полная вероятность наступления события B</p>
   <script defer async>
+  
+  function isProbabilityCorrect(p) {
+    return p >= 0 && p <= 1;
+  }
+  
   function countFormula(event) {
     ifCount = confirm("Хотите посчитать формулу?")
-    const values = {
-      'A': 2,
-      'B': 2,
-      'B | A': 2
-    };
     if (ifCount) {
+      const values = {  // requaried values
+        'A': 2,
+        'B': 2,
+        'B | A': 2
+      };
       for (var value in values) {
         if (values.hasOwnProperty(value)) {
-          while (values[value] > 1 || values[value] < 0) {
+          while (isProbabilityCorrect(values[value]) == false) {  // while value is not correct
             values[value] = prompt("P( " + value + " )", 1)
-            if (values[value] > 1 || values[value] < 0)
+            if (isProbabilityCorrect(values[value]) == false)  // if value is not correct
               alert("Вероятность должна быть больше 0 и меньше 1. Введите значение заново");
           }
         }
@@ -34,8 +39,8 @@
     }
   }
 
-  window.addEventListener("load", function(){
-    setTimeout(countFormula, 500);
+  window.addEventListener("load", function() {
+    setTimeout(countFormula, 500);  // wait for loading of all content
   })
   </script>
 </body>
