@@ -1,175 +1,65 @@
 function timeFrom(year, month, day, hours, minutes, seconds) {
-    if (year === undefined) {
+    if (year === undefined) {  // if no arguments was passed
         return 0
     }
     let result = '';
     const now = new Date();
-
-    let date;
-    if (arguments.length === 1)
-        date = new Date(year, 0);
-    if (arguments.length === 2)
-        date = new Date(year, month);
-    if (arguments.length === 3)
-        date = new Date(year, month, day);
-    if (arguments.length === 4)
-        date = new Date(year, month, day, hours);
-    if (arguments.length === 5)
-        date = new Date(year, month, day, hours, minutes);
-    if (arguments.length === 6)
-        date = new Date(year, month, day, hours, minutes, seconds);
+    const date = new Date(...arguments);
 
     let yearsDelta = getYearsDelta(now, date);
-
-    result += yearsDelta;
-    let lastNumber = yearsDelta % 10;
-    switch (lastNumber) {
-        case 1:
-            result += ' год';
-            break;
-        case 2:
-        case 3:
-        case 4:
-            result += ' года';
-            break;
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 0:
-            result += ' лет';
-            break;
-    }
+    result = addToResult(result, yearsDelta, ['год', 'года', 'лет'], '');
 
     if (month === undefined) {
         return result;
     }
 
     let monthsDelta = getMonthsDelta(now, date);
+    result = addToResult(result, monthsDelta, ['месяц', 'месяца', 'месяцев'], ', ');
 
-    result += ', ';
-    result += monthsDelta;
-    lastNumber = monthsDelta % 10;
-    switch (lastNumber) {
-        case 1:
-            result += ' месяц';
-            break;
-        case 2:
-        case 3:
-        case 4:
-            result += ' месяца';
-            break;
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 0:
-            result += ' месяцев';
-            break;
-    }
     if (day === undefined) {
         return result;
     }
 
     let daysDelta = getDaysDelta(now, date);
-
-    result += ', ';
-    result += daysDelta;
-    lastNumber = daysDelta % 10;
-    switch (lastNumber) {
-        case 1:
-            result += ' день';
-            break;
-        case 2:
-        case 3:
-        case 4:
-            result += ' дня';
-            break;
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 0:
-            result += ' дней';
-            break;
-    }
+    result = addToResult(result, daysDelta, ['день', 'дня', 'дней'], ', ');
 
     if (hours === undefined) {
         return result;
     }
 
     let hoursDelta = getHoursDelta(now, date);
-
-    result += ', ';
-    result += hoursDelta;
-    lastNumber = hoursDelta % 10;
-    switch (lastNumber) {
-        case 1:
-            result += ' час';
-            break;
-        case 2:
-        case 3:
-        case 4:
-            result += ' часа';
-            break;
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 0:
-            result += ' часов';
-            break;
-    }
+    result = addToResult(result, hoursDelta, ['час', 'часа', 'часов'], ', ');
 
     if (minutes === undefined) {
         return result;
     }
 
     let minutesDelta = getMinutesDelta(now, date);
-
-    result += ', ';
-    result += minutesDelta;
-    lastNumber = minutesDelta % 10;
-    switch (lastNumber) {
-        case 1:
-            result += ' минута';
-            break;
-        case 2:
-        case 3:
-        case 4:
-            result += ' минуты';
-            break;
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 0:
-            result += ' минут';
-            break;
-    }
+    result = addToResult(result, minutesDelta, ['минута', 'минуты', 'минут'], ', ');
 
     if (seconds === undefined) {
         return result;
     }
 
     let secondsDelta = getSecondsDelta(now, date);
+    result = addToResult(result, secondsDelta, ['секунда', 'секунды', 'секунд'], ', ');
 
-    result += ', ';
-    result += secondsDelta;
-    lastNumber = secondsDelta % 10;
+    return result;
+}
+
+// add part to result string (for example "15 часов")
+function addToResult(result, number, strArr, separator) {
+    result += separator;
+    result += number;
+    const lastNumber = number % 10;
     switch (lastNumber) {
         case 1:
-            result += ' секунда';
+            result += ' ' + strArr[0];
             break;
         case 2:
         case 3:
         case 4:
-            result += ' секунды';
+            result += ' ' + strArr[1];
             break;
         case 5:
         case 6:
@@ -177,17 +67,19 @@ function timeFrom(year, month, day, hours, minutes, seconds) {
         case 8:
         case 9:
         case 0:
-            result += ' секунд';
+            result += ' ' + strArr[2];
             break;
     }
     return result;
 }
 
+// count how many full years passed after certain date
 function getYearsDelta(now, date) {
     const years = now.getFullYear() - date.getFullYear();
-    if (years === 0) {
+    if (years === 0) {  // if 2 dates have same year
         return 0;
     }
+    // have to check amount of months
     const months = now.getMonth() - date.getMonth();
     if (months > 0) {
         return years;
@@ -231,6 +123,7 @@ function getYearsDelta(now, date) {
     return years
 }
 
+// count how many month passed after certain date (less than 12)
 function getMonthsDelta(now, date) {
     let months = now.getMonth() - date.getMonth();
     if (months === 0) {
@@ -274,6 +167,7 @@ function getMonthsDelta(now, date) {
     return months
 }
 
+// count how many days passed after certain date (less than 31)
 function getDaysDelta(now, date) {
     let days = now.getDate() - date.getDate();
     if (days === 0) {
@@ -326,6 +220,7 @@ function getDaysDelta(now, date) {
     return days
 }
 
+// count how many hours passed after certain date (less than 24)
 function getHoursDelta(now, date) {
     let hours = now.getHours() - date.getHours();
     if (hours === 0) {
@@ -353,6 +248,7 @@ function getHoursDelta(now, date) {
     return hours
 }
 
+// count how many minutes passed after certain date (less than 60)
 function getMinutesDelta(now, date) {
     let minutes = now.getMinutes() - date.getMinutes();
     if (minutes === 0)
@@ -371,6 +267,7 @@ function getMinutesDelta(now, date) {
     return minutes
 }
 
+// count how many seconds passed after certain date (less than 60)
 function getSecondsDelta(now, date) {
     const seconds = now.getSeconds() - date.getSeconds();
     if (seconds === 0) {
@@ -382,4 +279,5 @@ function getSecondsDelta(now, date) {
     return seconds
 }
 
+console.log("time passed since 2016 sep 1, 01:01:01");
 console.log(timeFrom(2016, 8, 1, 1, 1, 1));
