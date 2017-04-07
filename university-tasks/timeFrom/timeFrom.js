@@ -4,7 +4,12 @@ function timeFrom(year, month, day, hours, minutes, seconds) {
     }
     let result = '';
     const now = new Date();
-    const date = new Date(...arguments);
+    let date;
+    if (arguments.length === 1) {
+        date = new Date(year, 0);
+    } else {
+        date = new Date(...arguments);
+    }
 
     let yearsDelta = getYearsDelta(now, date);
     result = addToResult(result, yearsDelta, ['год', 'года', 'лет'], '');
