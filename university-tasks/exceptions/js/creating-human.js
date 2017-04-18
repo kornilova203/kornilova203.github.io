@@ -9,7 +9,7 @@ $("#form-create").submit(function (event) {  // set name form
         name = Number(name);  // convert it to number
     }
     try {  // try to create human with this name
-        human = new human(name);
+        human = new Human(name);
         $("#form-create").css({display: 'none'});  // hide this form
         $("#form-set-age").css({display: 'block'});  // show age form
     }
