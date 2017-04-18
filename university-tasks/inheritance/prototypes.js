@@ -16,7 +16,7 @@
     };
 
     function Triangle(fill, border, point1, point2, point3) {
-        Shape.call(this, fill, border);  // call parent constructor  ??? call or apply
+        Shape.call(this, fill, border);  // call parent constructor
         this.point1 = point1;
         this.point2 = point2;
         this.point3 = point3;

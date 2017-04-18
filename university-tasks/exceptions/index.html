@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="css/pure-min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/human.js"></script>
+  <title>Exceptions</title>
+</head>
+<body>
+<main>
+  <form id="form-create" class="pure-form pure-form-stacked">
+    <legend>Create instance of Human</legend>
+
+    <label for="name">Select name for new human</label>
+    <input id="name" type="text" placeholder="Name" name="name">
+
+    <button type="submit" class="pure-button pure-button-primary">Create</button>
+  </form>
+
+  <form id="form-set-age" class="pure-form pure-form-stacked">
+    <legend>Create instance of Human</legend>
+
+    <label for="name">Decide how old he/she will be</label>
+    <input id="age" type="number" value="18" name="age">
+
+    <button type="submit" class="pure-button pure-button-primary">Set age</button>
+  </form>
+  <div id="congratulations" class="congratulations">
+    <h1>Congratulations!</h1>
+    <h2>Here is your human:</h2>
+    <label class="label-your-human">Name:</label>
+    <p id="your-human-name"></p>
+    <label class="label-your-human">Age:</label>
+    <p id="your-human-age"></p>
+  </div>
+</main>
+
+<script src="js/creating-human.js"></script>
+</body>
+</html>

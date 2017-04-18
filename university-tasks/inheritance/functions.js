@@ -16,13 +16,20 @@
         return that;
     };
 
-    Object.prototype.superior = function (name) {  // method for getting parent methods
+    Object.method('superior', function (name) {
         const that = this;
         const method = that[name];
         return function () {
             return method.apply(that, arguments);
         };
-    };
+    });
+    // Object.prototype.superior = function (name) {  // method for getting parent methods
+    //     const that = this;
+    //     const method = that[name];
+    //     return function () {
+    //         return method.apply(that, arguments);
+    //     };
+    // };
 
     const triangle = function (spec) {
         const that = shape(spec);  // inherit from shape

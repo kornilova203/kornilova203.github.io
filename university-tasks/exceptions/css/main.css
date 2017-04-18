@@ -1,0 +1,26 @@
+main {
+    height: 300px;
+    width: 300px;
+    margin: 200px auto;
+    text-align: center;
+}
+.pure-form legend {
+    margin-bottom: 50px;
+}
+.pure-form-stacked input[type=text], .pure-form-stacked  input[type=number] {
+    margin: 20px auto;
+}
+#form-set-age, #congratulations {
+    display: none;
+}
+.label-your-human {
+    color: #0078e7;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+.congratulations p {
+    margin-top: 5px;
+}
+h1, h2 {
+    color: #333;
+}

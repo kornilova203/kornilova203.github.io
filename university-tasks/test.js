@@ -86,3 +86,97 @@ const Human2 = class {
 class MyError extends Error {
 
 }
+
+const {employee: [{name: name2}]} = {
+    employee: [
+        {
+            name: 'bob',
+            age: 20,
+        },
+        {
+            name: 'john',
+            age: 20,
+        },
+    ],
+};
+
+const arr = [1, 2, 3, 4];
+const arr2 = [
+    ...arr.slice(0, 2),
+    30,
+    ...arr.slice(3),
+];
+
+// or
+
+const arr3 = [...arr];
+arr3[3] = 20;
+
+// new Map(entries: [key, value][]);  // Map is iterated object. Array of arrays. (in simple object value must be string)
+//
+// properties:
+// readonly size: number;
+// clear(): void;
+// delete(key): boolean;
+// forEach(
+//      callbackfn: (value, key, map) => void,
+//      thisArg?: any  // context
+// }: void;
+// get(key): any | underfined;
+// has(key): boolean;
+// set(key, value): this;  // add new entries
+//
+// map.set(1, {});
+// map.set(null, 'it is null');
+// map.set(NaN, 'it is NaN');
+// map.set(undefined, 'it is undefined');
+
+// for ( const [key, value] of map ) {
+//     console.log(key, value);
+// }
+//
+// new NeakMap(entries?: [key: object, value: any][])
+// key is only object
+
+// props:
+// delete, get, has, set
+
+
+new Set(values?: any[]);  // gives unique set of elements
+
+// props:
+// size
+// add(value)
+// delete(value)
+// clear
+// forEach(fuction(value, value2, set), thisArgs);
+// has(value)
+
+const set = new Set( [1, 3, 4, 4, 5] );
+
+
+class MyError extends Error{
+    constructor(message) {
+        super(message);
+        this.name = MyError.name;
+    }
+}
+
+try {
+    // throw new Error('Error message');
+}
+catch (exception) {
+    console.error( exception );
+    if (exception instanceof MyError) {
+        // do smth
+    }
+    else {
+        throw exception;
+    }
+}
+finally {
+    
+}
+
+
+
