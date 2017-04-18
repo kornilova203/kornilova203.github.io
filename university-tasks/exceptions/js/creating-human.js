@@ -1,4 +1,4 @@
-let human2;
+let human;
 
 $("#form-create").submit(function (event) {  // set name form
     let name = $('#name').val();
@@ -8,8 +8,8 @@ $("#form-create").submit(function (event) {  // set name form
     if (isNaN(name) === false) {  // if string is number
         name = Number(name);  // convert it to number
     }
-    try {  // try to create human2 with this name
-        human2 = new human2(name);
+    try {  // try to create human with this name
+        human = new human(name);
         $("#form-create").css({display: 'none'});  // hide this form
         $("#form-set-age").css({display: 'block'});  // show age form
     }
@@ -28,11 +28,11 @@ $("#form-set-age").submit(function (event) {  // set age form
     let age = $('#age').val();
     age = Number(age);  // form gives even numbers in string format
     try {  // try to set age
-        human2.setAge(age);
+        human.setAge(age);
         $("#form-set-age").css({display: 'none'});
         $("#congratulations").css({display: 'block'});
-        $("#your-human2-name").html(human2.name);
-        $("#your-human2-age").html(human2.getAge());
+        $("#your-human-name").html(human.name);
+        $("#your-human-age").html(human.getAge());
 
     }
     catch (exception) {
