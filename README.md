@@ -18,20 +18,23 @@ For each drawing there is separate page where I added photos of process. For som
 To move a planet we have to count it's coordinates for next moment of time. For this we should know vector of velocity. But vector of velocity is always changing (in opposite case path of planet would be a strait line)
 
 Fortunately we have second law of Newton so it is not difficult to figure out what an acceleration will be equal to.
+
 ![formula of acceleration](http://csfm.volgatech.net/elearning/Nurgaliev/pictures/formula2_4.jpg)
 
 m is a mass of planet. But how we count force F?
 
 For this we have to remember well known formula of gravity:
+
 ![formula of gravitation](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/NewtonsLawOfUniversalGravitation.svg/400px-NewtonsLawOfUniversalGravitation.svg.png)
 
 It turns out that all we have to do is to count planet's acceleration, apdate vector of velocity and count new coordinates. Obviously we have to do it in loop. 
 
-## Подробнее о JavaScript коде
-Основой код [animateSpaceObjects.js](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/animateSpaceObjects.js)
+## About JavaScript
+Code can be found here: [animateSpaceObjects.js](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/animateSpaceObjects.js)
 
-Для анимации используется requestAnimationFrame. Так как JS не может гарантировать, что код будет исполняться через фиксированные промежутки времени, для анимации используется таймер, который замеряет dt, этот промежуток времени затем будет использоваться при обновлении вектора скорости и координат.
+JS cannot garantee that your timer code will be executed in time, so we have to create variable which will store how much time passed since last cicle. It will be used for updating velocity and coordinates.
 
+The star has coordinates (0, 0) although it is in center of screen
 Несмотря на то, что звезда находится в центре экрана, ее координаты всегда равны (0, 0), планеты крутятся так же вокруг начала координат. В центре экрана звезда оказывается благодаря тому, что функция отрисовки помещает ее туда. Это нужно для того, чтобы не приходилось пересчитывать положение объктов и их вектора скорости при масштабировании окна браузера.
 
 ### Класс космического объекта
