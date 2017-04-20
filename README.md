@@ -64,46 +64,19 @@ Class of space object has this methods:
 * change coeficient of size (it is dependent of size of screen)
 * set and get methods, with helps to work with coordinates and vectors
 
-### Класс вектора
-Координаты объекта и его скорость можно представить в виде пары значений (x, y). По сути и положение объекта и его скорость являются векторами. Чтобы упростить манипуляции ими используется специальный класс [Vector2D](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/vector2D.js)
+### Class of vector
+Coordinates, acceleration and velocity may be represented by pair of numbers (x and y). To make operations with this values easier there is class of [vector](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/vector2D.js)
 
-Элемент класса содержит:
-* координату x
-* координату y
+Instance of class has:
+* x coordinate
+* y coordinate
 
-Методы класса:
-* получение длины вектора
-* получение длины вектора в квадрате
-* сложение векторов
-* увеличение вектора в k раз
-* прибавление другого вектора, увеличенного в k раз
-* поворот вектора вокруг заданного центра
-
-Этот класс упрощает задачу обновления позиции объкта и его вектора скорости.
-
-## Могу ли я сам что-нибудь поменять и посмотреть, как оно работает?
-Репозиторий можно клонировать и изменить код файла [animateSpaceObjects.js](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/animateSpaceObjects.js). В начале задаются константы такие как масса планет и солнца, гравитационная постоянная
-```
-var m = 1; 
-var M = 1000000; 
-var G = 1;
-```
-Их можно поменять и посмотреть, что произойдет.
-
-Переменная amountOfPlanets отвечает за количество планет в группе (в моем коде в группе 3 планеты).
-
-Функция `createPlanets(amount, distance)` создает круговой массив, где amount - количество планет, distance - удаленность от солнца. В этой функции изначальная скорость планет равна `sqrt(G*M*m/distance)*0.75` это сделано для того, чтобы планеты двигались по эллиптическим орбитам. Если задать скорость `sqrt(G*M*m/distance)`, то орбита будет круговая.
-
-В ф-ции `init()` создается 2 группы по 3 планеты.
-
-Планету можно создать и не используя функцию createPlanets, например так:
-```
-var planet = new Ball (planetImg, 30, m); // создаем новую планету
-planet.pos2D = new Vector2D(0,200); // задаем ей начальные координаты
-planet.velo2D = new Vector2D(250, 0); // задаем вектор скорости планете
-planets.push(planet); // добавляем новую планету в массив к другим планетам
-```
-Главное - не забыть добавить новую планету в массив planets, иначе она не будет двигаться.
+Methods of class:
+* get length of vector
+* get squared length of vector
+* sum vectors
+* increase vector by k coeficient
+* rotate vector around given coordinate
 
 ## О чем этот сайт
 Это сайт создан для представления моих рисунков. В нем есть 3 основных раздела.
