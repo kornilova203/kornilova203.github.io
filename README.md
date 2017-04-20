@@ -14,18 +14,18 @@ For each drawing there is separate page where I added photos of process. For som
 
 ![screen of main page](http://i91.fastpic.ru/big/2017/0208/53/375fe02cc656fe871e462ee0f1f7c653.jpg)
 
-## Как работает гравитация?
-Для того, чтобы планеты двигались, необходимо посчитать их координаты в следующий момент времени, для этого нам нужно знать вектор скорости. Но вектор скорости постоянно меняется (если бы он не менялся, то планета бы летела по прямой).
+## How does gravity work?
+To move a planet we have to count it's coordinates for next moment of time. For this we should know vector of velocity. But vector of velocity is always changing (in opposite case path of planet would be a strait line)
 
-Чтобы узнать, как меняется скорость, нам нужно узнать ускорение. Тут на помощь приходит второй закон Ньютона:
-![формула ускорения](http://csfm.volgatech.net/elearning/Nurgaliev/pictures/formula2_4.jpg)
+Fortunately we have second law of Newton so it is not difficult to figure out what an acceleration will be equal to.
+![formula of acceleration](http://csfm.volgatech.net/elearning/Nurgaliev/pictures/formula2_4.jpg)
 
-С m всё понятно — это масса планеты. А как посчитать силу F?
+m is a mass of planet. But how we count force F?
 
-Для подсчета силы гравитации используется известная всем со школы формула:
-![формула всемирного тяготения](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/NewtonsLawOfUniversalGravitation.svg/400px-NewtonsLawOfUniversalGravitation.svg.png)
+For this we have to remember well known formula of gravity:
+![formula of gravitation](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/NewtonsLawOfUniversalGravitation.svg/400px-NewtonsLawOfUniversalGravitation.svg.png)
 
-Получается, всё, что нужно делать, это постоянно считать ускорение для планет, обновлять вектор скорости, а затем считать новые координаты
+It turns out that all we have to do is to count planet's acceleration, apdate vector of velocity and count new coordinates. Obviously we have to do it in loop. 
 
 ## Подробнее о JavaScript коде
 Основой код [animateSpaceObjects.js](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/animateSpaceObjects.js)
