@@ -34,36 +34,35 @@ Code can be found here: [animateSpaceObjects.js](https://github.com/kornilova-l/
 
 JS cannot garantee that your timer code will be executed in time, so we have to create variable which will store how much time passed since last cicle. It will be used for updating velocity and coordinates.
 
-The star has coordinates (0, 0) although it is in center of screen
-Несмотря на то, что звезда находится в центре экрана, ее координаты всегда равны (0, 0), планеты крутятся так же вокруг начала координат. В центре экрана звезда оказывается благодаря тому, что функция отрисовки помещает ее туда. Это нужно для того, чтобы не приходилось пересчитывать положение объктов и их вектора скорости при масштабировании окна браузера.
+The star has coordinates (0, 0) although it is in center of screen, planets are also moving around center of coordinates. In right place planets and the star are moved by function which draws it on canvas. 
 
-### Класс космического объекта
-Класс для космических объектов находится здесь: [ball.js](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/ball.js)
-Создание новой планеты (или звезды):
+### Class of space object
+Class of space object can be found here: [ball.js](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/ball.js)
+Creation of new planet or star:
 ```
 var planet = new Ball(img, radius, mass)
 ```
-Экземпляр класса содержит:
-* изображение объекта
-* радиус 
-* массу
-* координаты позиции x и y
-* координаты вектора скорости
-* ссылку на элемент \<canvas> (см ниже)
+Each instance has:
+* image of object
+* radius
+* mass
+* coordinates x и y
+* velocity vector
+* link to it's \<canvas>
 
-При этом создается новый элемент \<canvas> (он нужен для того, чтобы на нем отрисовывать двухмерную растровую графику), который помещается в конец \<body>. 
+Now new element \<canvas> is created (it is needed for drawing graphics on it).
 ```
 this.canvas = document.createElement('canvas');
 document.getElementsByTagName('body')[0].appendChild(this.canvas);
 ```
-Ссылка на canvas записывается в соответствующий параметр экземпляра. Для каждого космического объекта создается свой объект \<canvas>, так как при перемещении объекта, нужно сначала стереть его предыдущее положение, затем отрисовать новое. Если объекты расположены очень близко к друг другу, это сделать будет сложно. Есть другой вариант — стирать все объекты сразу, но тогда планеты будут мерцать, так как нужно относительно много времени для просчета и отрисовкой всех планет.
+Link to canvas is stored in each space object. If objects would have only one canvas for all it will be imposible to redraw planets if they are really close to each other. Of course it is possible to erease all objects on each step simultaneously but in this case planets will blink because it may take some time to update velocities before drawing it again.
 
-Класс содержит следующие методы:
-* отрисовка объекта на его \<canvas>
-* клонирование объекта
-* поворот объекта на определенное количество градусов относительно звезды (используется для создания кругового массива планет)
-* изменение коэфициента размера (коэфициент размера зависит от размера окна браузера)
-* set и get методы, которые упрощают работу с координатами объекта и его вектором скорости
+Class of space object has this methods:
+* draw it on \<canvas>
+* clone object
+* rotate it by secrtain amount of degrees (it is used for creating circle array of planents)
+* change coeficient of size (it is dependent of size of screen)
+* set and get methods, with helps to work with coordinates and vectors
 
 ### Класс вектора
 Координаты объекта и его скорость можно представить в виде пары значений (x, y). По сути и положение объекта и его скорость являются векторами. Чтобы упростить манипуляции ими используется специальный класс [Vector2D](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/vector2D.js)
