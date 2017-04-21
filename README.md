@@ -21,7 +21,7 @@ Fortunately, we have the second law of Newton so it is not difficult to figure o
 
 ![formula of acceleration](http://csfm.volgatech.net/elearning/Nurgaliev/pictures/formula2_4.jpg)
 
-m is a mass of a planet. But how we count force F?
+m is a mass of a planet. But how do we count force F?
 
 For this we have to remember well-known formula of gravity:
 
