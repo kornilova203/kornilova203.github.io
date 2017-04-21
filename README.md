@@ -7,34 +7,34 @@ This site was made for my drawings. It has 3 main sections:
 * Linocuts
 * Sketches
 
-For each drawing there is separate page where I added photos of process. For some of my drawings I added stories how I was inspired to draw it. This stories are awailable only in Russian language.
+For each drawing, there is a separate page where I added photos of the process. Some drawings have stories of its creation. These stories are available only in Russian language.
 
-## What about cosmos?
-[On main page](https://kornilova-l.github.io/) there is a gravity simulation. It is written in JavaScript. Planets are moving in elliptic path and their speed increases when they are close to the star.
+## What about Cosmos?
+[On the main page](https://kornilova-l.github.io/) there is a gravity simulation. It is written in JavaScript. Planets are moving in an elliptic path and their speed increases when they are close to the star.
 
 ![screen of main page](http://i91.fastpic.ru/big/2017/0208/53/375fe02cc656fe871e462ee0f1f7c653.jpg)
 
 ## How does gravity work?
-To move a planet we have to count it's coordinates for next moment of time. For this we should know vector of velocity. But vector of velocity is always changing (in opposite case path of planet would be a strait line)
+To move a planet we have to count its coordinates for next moment of time. For this, we should know vector of velocity. But vector of velocity is always changing (in opposite case path of planet would be a straight line)
 
-Fortunately we have second law of Newton so it is not difficult to figure out what an acceleration will be equal to.
+Fortunately, we have the second law of Newton so it is not difficult to figure out what an acceleration will be equal to.
 
 ![formula of acceleration](http://csfm.volgatech.net/elearning/Nurgaliev/pictures/formula2_4.jpg)
 
-m is a mass of planet. But how we count force F?
+m is a mass of a planet. But how we count force F?
 
-For this we have to remember well known formula of gravity:
+For this we have to remember well-known formula of gravity:
 
 ![formula of gravitation](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/NewtonsLawOfUniversalGravitation.svg/400px-NewtonsLawOfUniversalGravitation.svg.png)
 
-It turns out that all we have to do is to count planet's acceleration, apdate vector of velocity and count new coordinates. Obviously we have to do it in loop. 
+It turns out that all we have to do is to count planet's acceleration, update vector of velocity and count new coordinates. Obviously, we have to do it in a loop. 
 
 ## About JavaScript
 Code can be found here: [animateSpaceObjects.js](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/animateSpaceObjects.js)
 
-JS cannot garantee that your timer code will be executed in time, so we have to create variable which will store how much time passed since last cicle. It will be used for updating velocity and coordinates.
+JS cannot guarantee that your timer code will be executed in time, so we have to create a variable which will store how much time passed since last cycle. It will be used for updating velocity and coordinates.
 
-The star has coordinates (0, 0) although it is in center of screen, planets are also moving around center of coordinates. In right place planets and the star are moved by function which draws it on canvas. 
+The star has coordinates (0, 0) although it is in the center of a screen, planets are also moving around the center of coordinates. Planets and the star are moved to right place by a function which draws it on canvas.
 
 ### Class of space object
 Class of space object can be found here: [ball.js](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/ball.js)
@@ -55,7 +55,7 @@ Now new element \<canvas> is created (it is needed for drawing graphics on it).
 this.canvas = document.createElement('canvas');
 document.getElementsByTagName('body')[0].appendChild(this.canvas);
 ```
-Link to canvas is stored in each space object. If objects would have only one canvas for all it will be imposible to redraw planets if they are really close to each other. Of course it is possible to erease all objects on each step simultaneously but in this case planets will blink because it may take some time to update velocities before drawing it again.
+Link to canvas is stored in each space object. If objects would have only one canvas for all it will be impossible to redraw planets if they are really close to each other. Of course, it is possible to erase all objects on each step simultaneously. But in this case planets will blink because it may take some time to update velocities before drawing it again.
 
 Class of space object has this methods:
 * draw it on \<canvas>
@@ -65,9 +65,9 @@ Class of space object has this methods:
 * set and get methods, with helps to work with coordinates and vectors
 
 ### Class of vector
-Coordinates, acceleration and velocity may be represented by pair of numbers (x and y). To make operations with this values easier there is class of [vector](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/vector2D.js)
+Coordinates, acceleration, and velocity may be represented by a pair of numbers (x and y). To make operations with this values easier there is class of [vector](https://github.com/kornilova-l/kornilova-l.github.io/blob/master/js/vector2D.js)
 
-Instance of class has:
+An instance of the class has:
 * x coordinate
 * y coordinate
 
@@ -75,7 +75,7 @@ Methods of class:
 * get length of vector
 * get squared length of vector
 * sum vectors
-* increase vector by k coeficient
+* increase vector by k coefficient
 * rotate vector around given coordinate
 
 ## О чем этот сайт
