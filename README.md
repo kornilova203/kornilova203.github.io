@@ -1,6 +1,8 @@
 # Personal site-portfolio
 https://kornilova-l.github.io
 
+[Описание на русском](https://github.com/kornilova-l/kornilova-l.github.io#О-чем-этот-сайт)
+
 ## What's this about?
 This site was made for my drawings. It has 3 main sections:
 * Illustrations
