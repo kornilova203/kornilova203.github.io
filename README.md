@@ -1,5 +1,5 @@
 # Personal site-portfolio
-https://kornilova-l.github.io
+https://kornilova-l.github.io/drawings.html
 
 [Описание на русском](https://github.com/kornilova-l/kornilova-l.github.io#О-чем-этот-сайт)
 
