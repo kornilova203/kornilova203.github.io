@@ -23,16 +23,21 @@ nav ul {
 nav ul li {
     display: inline;
     font-size: 24px;
-    opacity: 0.4;
-    margin: 0 20px;
-    transition: opacity 300ms;
+    padding: 0 30px 0 20px;
+    border-right: #999 solid 2px;
+    margin: 0;
 }
 
-nav ul li:hover {
-    opacity: 0.7;
+nav ul li:last-child {
+    border: none;
 }
 
 a {
+    transition: color 300ms;
     text-decoration: none;
-    color: black;
+    color: #777;
+}
+
+nav ul li a:hover {
+    color: #222;
 }
