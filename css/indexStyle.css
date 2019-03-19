@@ -3,20 +3,12 @@
 body {
   background-color: #000;
   text-align: center;
-  margin: 0px;
-  background-image: url('../img/bg.jpg');
+  margin: 0;
   background-repeat: repeat;
   background-size: cover;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-}
-
-canvas {
-  position: absolute;
-  left: 0;
-  top: 0;
-  pointer-events: none;
 }
 
 .info {
@@ -59,7 +51,6 @@ li {
 nav ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
   height: 100%;
   display: flex;
   justify-content: space-around;
@@ -82,7 +73,7 @@ a:hover { /* цвет при наведении */
 color: #ffbc00;
 }
 
-.solarSistem {
+.space-objects {
   display: inline-block; /*для позиции по центру*/
   width: 60vmin;
   height: 60vmin;
@@ -94,49 +85,33 @@ color: #ffbc00;
     position: absolute;
 }
 
-.path1 {
-  width: 50%;
-  height: 50%;
-  animation: orbit1 15s linear infinite;
-}
-
-.path2 {
-  width: 73%;
-  height: 73%;
-  animation: orbit2 20s linear infinite;
-}
-
-.path3 {
-  width: 100%;
-  height: 100%;
-  animation: orbit3 27s linear infinite;
-}
-
-.path {
+.space-object {
+  border-radius: 50%;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
 }
 
 .sun {
-  width: 50%;
-  position: absolute;
-  top:25%;
-  left: 25%;
+  width: 8%;
+  height: 8%;
+  top: 46%;
+  left: 46%;
   cursor: pointer;
+  background-color: rgba(223, 172, 21, 0.84);
 }
 
-#sunOn {
-  z-index: 2;
-  opacity: 0;
-  animation: turnOn 2s linear 1;
+.planet-wrapper {
+  position: absolute;
 }
 
-#sunOff {
-  z-index: 1;
-  opacity: 0;
-  animation: turnOn 2s linear 1;
+.planet-path {
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: solid rgba(255, 255, 255, 0.3) 1px;
+}
+
+@keyframes orbit {
+  100% { transform: rotate(360deg); }
 }

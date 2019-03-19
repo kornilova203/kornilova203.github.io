@@ -6,8 +6,10 @@
   <title>Людмила Корнилова</title>
   <link rel="stylesheet" href="css/indexStyle.css">
   <link rel="stylesheet" href="css/indexMediaquery.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+  <script src="js/animateSpaceObjects.js"></script>
 </head>
-<body onload="init()" onmousedown="startClick(event);" onmouseup="endClick(event);">
+<body>
   <h1><a href="contacts.html">Людмила Корнилова</a></h1>
   <img id="sunImg" style='display: none;' alt="image of sun" src="img/space/sun-on.png"  />
   <img id="planetImg" style='display: none;' alt= "image of planet" src="img/space/planet2.png" />
@@ -20,9 +22,8 @@
       <li><a href="contacts.html">Контакты</a></li>
     </ul>
   </nav>
-  <link rel="stylesheet" href="css/animation.css">
-  <script src= "js/vector2D.js"></script>
-  <script src= "js/ball.js"></script>
-  <script src="js/animateSpaceObjects.js"></script>
+  <div class="space-objects">
+    <div class="sun space-object"></div>
+  </div>
 </body>
 </html>

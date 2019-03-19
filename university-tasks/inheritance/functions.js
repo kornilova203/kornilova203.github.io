@@ -52,7 +52,7 @@
         that.draw = function () {
             super_draw();
             console.log("Centre: ", spec.centre);
-            console.log("Radius: " + spec.radius);
+            console.log("Radius: " + spec.diameter);
         };
 
         return that;
