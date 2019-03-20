@@ -25,18 +25,18 @@ const COLORS = [
 ];
 
 const PLANETS = [
-    new Planet(15, 13.5, 5),
-    new Planet(14, 21, 6),
-    new Planet(14, 36, 7.5),
-    new Planet(7, 48.5, 10),
-    new Planet(9, 65, 15),
+    new Planet(15, 13.5, 4),
+    new Planet(14, 21, 7),
+    new Planet(14, 36, 15),
+    new Planet(7, 48.5, 25),
+    new Planet(9, 65, 35),
 ];
 
 const ANIMATION_TIME = 1000;
 const DELAY_STEP = 100;
 const PULSE_COEFFICIENT = 1.2;
 
-function placeInCenter($el, size) {
+function changeSizeAndPlaceInCenter($el, size) {
     $el.css("width", size + "%");
     $el.css("height", size + "%");
     let offset = (100 - size) / 2;
@@ -50,9 +50,10 @@ function pulse(planets, $wrappers) {
         setTimeout(() => {
             const planet = planets[i];
             const $wrapper = $wrappers[i];
-            placeInCenter($wrapper, planet.orbitDiameter * PULSE_COEFFICIENT);
+            setRandomColor($wrapper.find(".planet"));
+            changeSizeAndPlaceInCenter($wrapper, planet.orbitDiameter * PULSE_COEFFICIENT);
             setTimeout(() => {
-                placeInCenter($wrapper, planet.orbitDiameter);
+                changeSizeAndPlaceInCenter($wrapper, planet.orbitDiameter);
             }, ANIMATION_TIME)
         }, currentDelay);
         currentDelay += DELAY_STEP;
@@ -76,7 +77,7 @@ window.onload = () => {
 
 function createPlanetWrapper(planet, i) {
     const $planetWrapper = $('<div class="planet-wrapper">');
-    placeInCenter($planetWrapper, planet.orbitDiameter);
+    changeSizeAndPlaceInCenter($planetWrapper, planet.orbitDiameter);
     $planetWrapper.css("animation-duration", `${planet.animationTime}s`);
     $planetWrapper.css("animation-name", `orbit${i}`);
     return $planetWrapper;
@@ -86,9 +87,13 @@ function getRandomColor() {
     return COLORS[Math.floor(Math.random() * COLORS.length)]
 }
 
+function setRandomColor($planet) {
+    $planet.css("background-color", getRandomColor());
+}
+
 function createPlanetObject(planet) {
     const $planet = $('<div class="planet space-object"></div>');
-    $planet.css("background-color", getRandomColor());
+    setRandomColor($planet);
     // calc real size of a planet to avoid recalculations during pulse
     const spaceObjectsWidthStr = $(".space-objects").css("width");
     const spaceObjectsWidthPx = spaceObjectsWidthStr.substring(0, spaceObjectsWidthStr.length - 2);

@@ -82,7 +82,8 @@ color: #ffbc00;
 }
 
 .planet {
-    position: absolute;
+  position: absolute;
+  transition: background-color 1s;
 }
 
 .space-object {
