@@ -101,6 +101,10 @@ color: #ffbc00;
 
 .planet-wrapper {
   position: absolute;
+  transition: all 1s;
+  animation-name: orbit;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .planet-path {

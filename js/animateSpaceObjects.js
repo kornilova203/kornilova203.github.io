@@ -15,24 +15,52 @@ const planets = [
     new Planet(13, 65, "#309474", 15),
 ];
 
+const ANIMATION_TIME = 1000;
+const DELAY_STEP = 100;
+const PULSE_COEFFICIENT = 1.2;
+
+function placeInCenter($el, size) {
+    $el.css("width", size + "%");
+    $el.css("height", size + "%");
+    let offset = (100 - size) / 2;
+    $el.css("top", offset + "%");
+    $el.css("left", offset + "%");
+}
+
+function pulse(planets, $wrappers) {
+    let currentDelay = 0;
+    for (let i = 0; i < planets.length; i++) {
+        setTimeout(() => {
+            const planet = planets[i];
+            const $wrapper = $wrappers[i];
+            placeInCenter($wrapper, planet.orbitDiameter * PULSE_COEFFICIENT);
+            setTimeout(() => {
+                placeInCenter($wrapper, planet.orbitDiameter);
+            }, ANIMATION_TIME)
+        }, currentDelay);
+        currentDelay += DELAY_STEP;
+    }
+}
+
 window.onload = () => {
     const $spaceObjects = $(".space-objects");
-    $spaceObjects.ready(() => {
-        for (let i = 0; i < planets.length; i++) {
-            const planet = planets[i];
-            createPlanet(planet, $spaceObjects);
-        }
-    });
+    const $wrappers = [];
+    for (let i = 0; i < planets.length; i++) {
+        const planet = planets[i];
+        $wrappers.push(createPlanet(planet, $spaceObjects));
+    }
+    setTimeout(() => {
+        pulse(planets, $wrappers);
+        setInterval(() => {
+            pulse(planets, $wrappers)
+        }, 7000);
+    }, 2000);
 };
 
 function createPlanetWrapper(planet) {
     const $planetWrapper = $('<div class="planet-wrapper">');
-    $planetWrapper.css("width", planet.orbitDiameter + "%");
-    $planetWrapper.css("height", planet.orbitDiameter + "%");
-    let offset = (100 - planet.orbitDiameter) / 2;
-    $planetWrapper.css("top", offset + "%");
-    $planetWrapper.css("left", offset + "%");
-    $planetWrapper.css("animation", `orbit ${planet.animationTime}s linear infinite`);
+    placeInCenter($planetWrapper, planet.orbitDiameter);
+    $planetWrapper.css("animation-duration", `${planet.animationTime}s`);
     return $planetWrapper;
 }
 
@@ -55,4 +83,5 @@ function createPlanet(planet, $spaceObjects) {
     $planetWrapper.append($planetPath);
     $planetWrapper.append($planet);
     $spaceObjects.append($planetWrapper);
+    return $planetWrapper;
 }
