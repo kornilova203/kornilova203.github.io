@@ -1,18 +1,35 @@
 class Planet {
-    constructor(radius, orbitRadius, color, animationTime) {
+    constructor(radius, orbitRadius, animationTime) {
         this.diameter = radius;
         this.orbitDiameter = orbitRadius;
-        this.color = color;
         this.animationTime = animationTime;
     }
 }
 
-const planets = [
-    new Planet(15, 13.5, "#2b8bdf", 5),
-    new Planet(14, 21, "#574994", 6),
-    new Planet(14, 36, "#942552", 7.5),
-    new Planet(7, 48.5, "#943f23", 10),
-    new Planet(9, 65, "#309474", 15),
+const COLORS = [
+    "#2b8bdf",
+    "#5ea0df",
+    "#717cdf",
+    "#574994",
+    "#6c4494",
+    "#893794",
+    "#942552",
+    "#941029",
+    "#943f23",
+    "#945c28",
+    "#5d9443",
+    "#44944d",
+    "#15947a",
+    "#3a9492",
+    "#309474"
+];
+
+const PLANETS = [
+    new Planet(15, 13.5, 5),
+    new Planet(14, 21, 6),
+    new Planet(14, 36, 7.5),
+    new Planet(7, 48.5, 10),
+    new Planet(9, 65, 15),
 ];
 
 const ANIMATION_TIME = 1000;
@@ -45,14 +62,14 @@ function pulse(planets, $wrappers) {
 window.onload = () => {
     const $spaceObjects = $(".space-objects");
     const $wrappers = [];
-    for (let i = 0; i < planets.length; i++) {
-        const planet = planets[i];
+    for (let i = 0; i < PLANETS.length; i++) {
+        const planet = PLANETS[i];
         $wrappers.push(createPlanet(planet, $spaceObjects, i));
     }
     setTimeout(() => {
-        pulse(planets, $wrappers);
+        pulse(PLANETS, $wrappers);
         setInterval(() => {
-            pulse(planets, $wrappers)
+            pulse(PLANETS, $wrappers)
         }, 7000);
     }, 2000);
 };
@@ -65,9 +82,13 @@ function createPlanetWrapper(planet, i) {
     return $planetWrapper;
 }
 
+function getRandomColor() {
+    return COLORS[Math.floor(Math.random() * COLORS.length)]
+}
+
 function createPlanetObject(planet) {
     const $planet = $('<div class="planet space-object"></div>');
-    $planet.css("background-color", planet.color);
+    $planet.css("background-color", getRandomColor());
     // calc real size of a planet to avoid recalculations during pulse
     const spaceObjectsWidthStr = $(".space-objects").css("width");
     const spaceObjectsWidthPx = spaceObjectsWidthStr.substring(0, spaceObjectsWidthStr.length - 2);
