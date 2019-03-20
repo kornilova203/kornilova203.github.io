@@ -102,7 +102,6 @@ color: #ffbc00;
 .planet-wrapper {
   position: absolute;
   transition: all 1s;
-  animation-name: orbit;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -116,6 +115,28 @@ color: #ffbc00;
   border: solid rgba(255, 255, 255, 0.3) 1px;
 }
 
-@keyframes orbit {
-  100% { transform: rotate(360deg); }
+/* difficult to generate keyframes programmatically */
+@keyframes orbit0 {
+  0% { transform: rotate(-10deg); }
+  100% { transform: rotate(350deg); }
+}
+
+@keyframes orbit1 {
+  0% { transform: rotate(83deg); }
+  100% { transform: rotate(443deg); }
+}
+
+@keyframes orbit2 {
+  0% { transform: rotate(142deg); }
+  100% { transform: rotate(502deg); }
+}
+
+@keyframes orbit3 {
+  0% { transform: rotate(20deg); }
+  100% { transform: rotate(380deg); }
+}
+
+@keyframes orbit4 {
+  0% { transform: rotate(-60deg); }
+  100% { transform: rotate(300deg); }
 }

@@ -8,11 +8,11 @@ class Planet {
 }
 
 const planets = [
-    new Planet(18, 13.5, "#2b8bdf", 5),
-    new Planet(14, 21.0, "#574994", 6),
-    new Planet(18, 36, "#942552", 7.5),
-    new Planet(8, 48.5, "#943f23", 10),
-    new Planet(13, 65, "#309474", 15),
+    new Planet(15, 13.5, "#2b8bdf", 5),
+    new Planet(14, 21, "#574994", 6),
+    new Planet(14, 36, "#942552", 7.5),
+    new Planet(7, 48.5, "#943f23", 10),
+    new Planet(9, 65, "#309474", 15),
 ];
 
 const ANIMATION_TIME = 1000;
@@ -47,7 +47,7 @@ window.onload = () => {
     const $wrappers = [];
     for (let i = 0; i < planets.length; i++) {
         const planet = planets[i];
-        $wrappers.push(createPlanet(planet, $spaceObjects));
+        $wrappers.push(createPlanet(planet, $spaceObjects, i));
     }
     setTimeout(() => {
         pulse(planets, $wrappers);
@@ -57,27 +57,31 @@ window.onload = () => {
     }, 2000);
 };
 
-function createPlanetWrapper(planet) {
+function createPlanetWrapper(planet, i) {
     const $planetWrapper = $('<div class="planet-wrapper">');
     placeInCenter($planetWrapper, planet.orbitDiameter);
     $planetWrapper.css("animation-duration", `${planet.animationTime}s`);
+    $planetWrapper.css("animation-name", `orbit${i}`);
     return $planetWrapper;
 }
 
 function createPlanetObject(planet) {
     const $planet = $('<div class="planet space-object"></div>');
     $planet.css("background-color", planet.color);
-    $planet.css("width", planet.diameter + "%");
-    $planet.css("height", planet.diameter + "%");
+    // calc real size of a planet to avoid recalculations during pulse
+    const spaceObjectsWidthStr = $(".space-objects").css("width");
+    const spaceObjectsWidthPx = spaceObjectsWidthStr.substring(0, spaceObjectsWidthStr.length - 2);
+    const wrapperSizePx = spaceObjectsWidthPx * planet.orbitDiameter / 100;
+    const planetDiameterPx = wrapperSizePx * planet.diameter / 100;
+    $planet.css("width", planetDiameterPx + "px");
+    $planet.css("height", planetDiameterPx + "px");
     $planet.css("left", (100 - planet.diameter) / 2 + "%");
-    $planet.css("top", -(planet.diameter / 2) + "%");
-    $planet.css("transform-origin", `50% ${((50 / planet.diameter) * 100) + 50}%`);
-    $planet.css("transform", `rotate(${Math.random()*360}deg)`);
+    $planet.css("top", -(planetDiameterPx / 2) + "px");
     return $planet;
 }
 
-function createPlanet(planet, $spaceObjects) {
-    const $planetWrapper = createPlanetWrapper(planet);
+function createPlanet(planet, $spaceObjects, i) {
+    const $planetWrapper = createPlanetWrapper(planet, i);
     const $planetPath = $('<div class="planet-path"></div>');
     const $planet = createPlanetObject(planet);
     $planetWrapper.append($planetPath);
